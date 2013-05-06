@@ -50,6 +50,9 @@ public:
     virtual ~CVodesIntegrator();
     virtual void setTolerances(double reltol, size_t n, double* abstol);
     virtual void setTolerances(double reltol, double abstol);
+#if defined HAS_CUDA && defined HAS_MAGMA
+    virtual void setGPU(int useGPU);
+#endif
     virtual void setSensitivityTolerances(double reltol, double abstol);
     virtual void setProblemType(int probtype);
     virtual void initialize(double t0, FuncEval& func);
@@ -108,6 +111,9 @@ private:
     int m_maxord;
     double m_reltol;
     double m_abstols;
+#if defined HAS_CUDA && defined HAS_MAGMA
+    int m_GPU;
+#endif
     double m_reltolsens, m_abstolsens;
     size_t m_nabs;
     double m_hmax, m_hmin;

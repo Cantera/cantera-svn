@@ -35,6 +35,9 @@ using namespace std;
 #include "cvodes/cvodes_diag.h"
 #include "cvodes/cvodes_spgmr.h"
 #include "cvodes/cvodes_band.h"
+#if defined HAS_CUDA && defined HAS_MAGMA
+#include "cvodes/cvodes_gpu.h"
+#endif
 
 #else
 #error unsupported Sundials version!
@@ -123,6 +126,9 @@ CVodesIntegrator::CVodesIntegrator() :
     m_maxord(0),
     m_reltol(1.e-9),
     m_abstols(1.e-15),
+#if defined HAS_CUDA && defined HAS_MAGMA
+    m_GPU(0),
+#endif
     m_reltolsens(1.0e-5),
     m_abstolsens(1.0e-4),
     m_nabs(0),
@@ -193,6 +199,20 @@ void CVodesIntegrator::setTolerances(double reltol, double abstol)
     m_reltol = reltol;
     m_abstols = abstol;
 }
+
+#if defined HAS_CUDA && defined HAS_MAGMA
+void CVodesIntegrator::setGPU(int useGPU)
+{
+    if (useGPU == 0) {
+        printf("Use CPU LU factorization solver.\n");
+        m_GPU = 0;
+    }
+    else {
+        printf("Use GPU MAGMA LU factorization solver.\n");
+        m_GPU = 1;
+    }
+}
+#endif
 
 void CVodesIntegrator::setSensitivityTolerances(double reltol, double abstol)
 {
@@ -358,6 +378,9 @@ void CVodesIntegrator::initialize(double t0, FuncEval& func)
 #elif SUNDIALS_VERSION >= 24
 
     flag = CVodeInit(m_cvode_mem, cvodes_rhs, m_t0, m_y);
+#if defined HAS_CUDA && defined HAS_MAGMA
+    flag = CVodesInitGPU(m_cvode_mem, m_GPU); //set CPU solver
+#endif
     if (flag != CV_SUCCESS) {
         if (flag == CV_MEM_FAIL) {
             throw CVodesErr("Memory allocation failed.");
