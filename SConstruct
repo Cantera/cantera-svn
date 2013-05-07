@@ -437,6 +437,46 @@ config_options = [
            libraries are lowercase or uppercase. If you don't know, run 'nm' on
            the library file (e.g. 'nm libblas.a').""",
         'lower', ('lower','upper')),
+    EnumVariable(
+        'use_cuda',
+        """Enable CUDA for Sundials
+           installed separately. If you leave USE_CUDA = 'default', then it
+           will be used if you have it, Or set USE_CUDA to 'y' or 'n' to 
+           force using it or not. 
+           See. https://developer.nvidia.com/category/zone/cuda-zone""",
+        'default', ('default', 'y', 'n')),
+    PathVariable(
+        'cuda_include',
+        """The directory where the CUDA header files are installed.
+           Not needed if the headers are installed in a
+           standard location, e.g. /usr/include.""",
+        '', PathVariable.PathAccept),
+    PathVariable(
+        'cuda_libdir',
+        """The directory where the CUDA static libraries are installed.
+           Not needed if the libraries are installed in a standard location,
+           e.g. /usr/lib.""",
+        '', PathVariable.PathAccept),
+    EnumVariable(
+        'use_magma',
+        """Enable MAGMA for Sundials
+           installed separately. If you leave USE_MAGMA = 'default', then it
+           will be used if you have it, Or set USE_MAGMA to 'y' or 'n' to 
+           force using it or not. 
+           See. http://icl.cs.utk.edu/magma/""",
+        'default', ('default', 'y', 'n')),
+    PathVariable(
+        'magma_include',
+        """The directory where the MAGMA header files are installed. 
+           Not needed if the headers are installed in a
+           standard location, e.g. /usr/include.""",
+        '', PathVariable.PathAccept),
+    PathVariable(
+        'magma_libdir',
+        """The directory where the MAGMA static libraries are installed.
+           Not needed if the libraries are installed in a standard location,
+           e.g. /usr/lib.""",
+        '', PathVariable.PathAccept),
     BoolVariable(
         'lapack_ftn_trailing_underscore', '', True),
     BoolVariable(
@@ -719,6 +759,19 @@ if env['use_sundials'] in ('y','default'):
     if env['sundials_libdir']:
         env.Append(LIBPATH=[env['sundials_libdir']])
 
+# CUDA configuration
+if env['use_cuda'] in ('y','default'):
+    if env['cuda_include']:
+        env.Append(CPPPATH=[env['cuda_include']])
+    if env['cuda_libdir']:
+        env.Append(LIBPATH=[env['cuda_libdir']])
+
+# MAGMA configuration
+if env['use_magma'] in ('y','default'):
+    if env['magma_include']:
+        env.Append(CPPPATH=[env['magma_include']])
+    if env['magma_libdir']:
+        env.Append(LIBPATH=[env['magma_libdir']])
 
 # BLAS / LAPACK configuration
 if env['blas_lapack_libs'] != '':
@@ -1071,6 +1124,11 @@ cdefine('HAS_NUMERIC', 'python_array', 'numeric')
 cdefine('HAS_NO_PYTHON', 'python_package', 'none')
 
 cdefine('HAS_SUNDIALS', 'use_sundials', 'y')
+#CUDA
+cdefine('HAS_CUDA', 'use_cuda', 'y')
+#MAGMA
+cdefine('HAS_MAGMA', 'use_magma', 'y')
+
 if env['use_sundials'] == 'y':
     configh['SUNDIALS_VERSION'] = env['sundials_version'].replace('.','')
 else:
@@ -1234,6 +1292,22 @@ else:
         linkLibs.extend(['cvode'])
         linkSharedLibs.extend(['cvode_shared'])
     #print 'linkLibs = ', linkLibs
+
+#CUDA
+if env['use_cuda'] == 'y':
+    env['cuda_libs'] = ['cuda', 'cublas']
+    linkLibs.extend(('cuda', 'cublas'))
+    linkSharedLibs.extend(('cuda', 'cublas'))
+else:
+    env['cuda_libs'] = []
+
+#MAGMA
+if env['use_magma'] == 'y':
+    env['magma_libs'] = ['magma', 'magmablas']
+    linkLibs.extend(('magma', 'magmablas'))
+    linkSharedLibs.extend(('magma', 'magmablas'))
+else:
+    env['magma_libs'] = []
 
 if not env['single_library']:
     linkLibs.append('ctmath')

@@ -16,7 +16,7 @@ def configure_numpy(python_command):
     module_ext, py_version, numpy_include = info.splitlines()
 
     incDirs = (".", "../../include", numpy_include,
-               localenv['sundials_include'], localenv['boost_inc_dir'])
+               localenv['sundials_include'], localenv['boost_inc_dir'], localenv['cuda_libdir'], localenv['magma_libdir'])
     localenv['py_include_dirs'] = repr([x for x in incDirs if x])
 
     return module_ext, py_version
@@ -67,7 +67,7 @@ def install_module(prefix, python_version):
 
 
 libDirs = ('../../build/lib', localenv['sundials_libdir'],
-           localenv['boost_lib_dir'])
+           localenv['boost_lib_dir'], localenv['cuda_libdir'], localenv['magma_libdir'])
 localenv['py_cantera_libs'] = repr(localenv['cantera_libs'])
 localenv['py_libdirs'] = repr([x for x in libDirs if x])
 

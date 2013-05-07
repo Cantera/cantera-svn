@@ -52,6 +52,12 @@ typedef  int          ftnlen;       // Fortran hidden string length type
 %(HAS_SUNDIALS)s
 %(SUNDIALS_VERSION)s
 
+//CUDA
+%(HAS_CUDA)s
+
+//MAGMA
+%(HAS_MAGMA)s
+
 //-------- LAPACK / BLAS ---------
 
 %(LAPACK_FTN_STRING_LEN_AT_END)s
