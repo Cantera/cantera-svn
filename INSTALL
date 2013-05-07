@@ -20,3 +20,5 @@ Detailed Instructions
 
 See the file `doc/sphinx/compiling.rst` or the HTML instructions
 available at http://cantera.github.com/docs/sphinx/html/compiling.html.
+
+scons build prefix=~/cantera-Ray use_sundials=y use_cuda=y use_magma=y cuda_libdir=/usr/local/cuda/lib64/ cuda_include=/usr/local/cuda/include/ use_magma=y magma_libdir=~/E/Ubuntu/software/magma-1.3.0/lib/ magma_include=~/E/Ubuntu/software/magma-1.3.0/include/ python_package=new
