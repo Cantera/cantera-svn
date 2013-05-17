@@ -824,3 +824,49 @@ cdef class ReactorNet:
     property n_vars:
         def __get__(self):
             return self.net.neq()
+
+    def get_jacobian(self):
+        if len(self._reactors) > 1:
+            raise NotImplementedError('Only supports networks with a single reactor')
+
+        r = self._reactors[0]
+
+        if r.reactor_type == 'Reactor':
+            m = r.mass
+            V = r.volume
+            U = m * r.thermo.u * m
+            mk = m * r.thermo.Y
+            nvars = 2 + len(mk)
+        elif r.reactor_type == 'ExperimentalReactor':
+            m = r.mass
+            V =  r.volume
+            T = r.T
+            Yk = r.thermo.Y
+            nvars = 3 + len(Yk)
+        else:
+            raise NotImplementedError('Reactor type {} not supported'.format(r.reactor_type))
+
+        cdef np.ndarray[np.double_t, ndim=1] y = np.zeros(nvars)
+        cdef np.ndarray[np.double_t, ndim=1] ydot = np.zeros(nvars)
+        cdef np.ndarray[np.double_t, ndim=2] J = np.zeros((nvars, nvars))
+        cdef CxxArray2D* Jcxx = new CxxArray2D()
+        Jcxx.resize(nvars, nvars)
+
+        if r.reactor_type == 'Reactor':
+            y[0] = U
+            y[1] = V
+            y[2:] = mk
+        elif r.reactor_type == 'ExperimentalReactor':
+            y[0] = m
+            y[1] = V
+            y[2] = T
+            y[3:] = Yk
+
+        self.net.evalJacobian(self.time, &y[0], &ydot[0], NULL, Jcxx)
+
+        for j in range(nvars):
+            for k in range(nvars):
+                J[j,k] = Jcxx.get(j,k)
+
+        del Jcxx
+        return J, y

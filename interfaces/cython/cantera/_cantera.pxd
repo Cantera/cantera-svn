@@ -12,6 +12,11 @@ cdef extern from "cantera/base/xml.h" namespace "Cantera":
         XML_Node* findID(string)
         int nChildren()
 
+cdef extern from "cantera/base/Array.h" namespace "Cantera":
+    cdef cppclass CxxArray2D "Cantera::Array2D":
+        void resize(size_t, size_t)
+        double get "operator()" (size_t, size_t)
+
 cdef extern from "cantera/base/ctml.h" namespace "ctml":
     XML_Node getCtmlTree(string) except +
 
@@ -328,6 +333,7 @@ cdef extern from "cantera/zeroD/ReactorNet.h":
         cbool verbose()
         void setVerbose(cbool)
         size_t neq()
+        void evalJacobian(double, double*, double*, double*, CxxArray2D*)
 
         void setSensitivityTolerances(double, double)
         double rtolSensitivity()
