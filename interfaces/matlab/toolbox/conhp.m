@@ -1,11 +1,24 @@
 function dydt = conhp(t,y,gas,mw) %#ok<INUSL>
-% CONHP ODE system for a constant-pressure, adiabatic reactor.
+% ODE system for a constant-pressure, adiabatic reactor.
 %
-%    Function CONHP evaluates the system of ordinary differential
-%    equations for an adiabatic, constant-pressure,
-%    zero-dimensional reactor. It assumes that the 'gas' object
-%    represents a reacting ideal gas mixture.
-
+% Function :mat:func:`conhp` evaluates the system of ordinary
+% differential equations for an adiabatic, constant-pressure,
+% zero-dimensional reactor. It assumes that the 'gas' object
+% represents a reacting ideal gas mixture.
+%
+% :param t:
+%     Temperature
+% :param y:
+%     Vector of solution components. The order is:
+%
+%       - 1  - Temperature
+%       - 2+ - Species mass fractions
+%
+% :param mw:
+%     Vector of molecular weights of the species.
+% :return:
+%     Returns a vector of solution derivatives, size nSpecies + 1.
+%
 
 % Set the state of the gas, based on the current solution vector.
 set(gas, 'T', y(1), 'P', pressure(gas), 'Y', y(2:end));

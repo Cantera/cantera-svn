@@ -33,7 +33,113 @@ if localenv['sphinx_docs']:
                                  '#doc/sphinx/cython/examples/example-script.rst.in')
             build(b)
             localenv.Depends(sphinxdocs, b)
+    
+    def extract_matlab_docstring(mfile):
+        """
+            Return the docstring from mfile, assuming that it consists of the
+            first uninterrupted comment block.
+        """
+        docstring = ".. mat:function:: "
+        with open(mfile, 'r') as in_file:
+            docstring += get_function_name(in_file.readline()) + '\n'
+            for i, line in enumerate(in_file.readlines()):
+                try:
+                    if line.lstrip().startswith('%'):
+                        docstring += ' '*4 + line.lstrip()[2:-1] + '\n'
+                    else:
+                        break
+                except IndexError:
+                    docstring += '\n'
+                    
+        return docstring + '\n'
 
+        
+    def get_function_name(str):
+        """
+            Return the function or classdef signature, assuming that 
+            the string starts with either 'function ' or 'classdef '.
+        """
+        if str.startswith('function '):
+            sig = str[len('function '):]
+        elif str.startswith('classdef '):
+            sig = str[len('classdef '):]
+        else:
+            print "Unknown function declaration in MATLAB document", str
+
+        # return sig
+        if '=' in sig:
+            idx = sig.index('=')
+            return sig[idx+2:]
+        else:
+            return sig
+
+    files = {
+             'importing':['Importing Phase Objects',
+                          ['@Solution'],
+                          ['IdealGasMix.m']
+                         ],
+             'thermodynamics': ['Thermodynamic Properties',
+                                ['@Mixture', '@ThermoPhase'],
+                                []
+                               ],
+             'kinetics': ['Chemical Kinetics',
+                          ['@Kinetics'],
+                          []
+                         ],
+             'transport': ['Transport Properties',
+                           ['@Transport'],
+                           []
+                          ],
+             'zero-dim': ['Zero-Dimensional Reactor Networks',
+                          ['@Func', '@Reactor', '@ReactorNet', '@FlowDevice',
+                           '@Wall'],
+                          ['conhp.m', 'ConstPressureReactor.m', 'conuv.m',
+                           'FlowReactor.m', 'gaussian.m',
+                           'IdealGasConstPressureReactor.m',
+                           'IdealGasReactor.m', 'MassFlowController.m',
+                           'polynom.m', 'reactor_ode.m', 'Reservoir.m',
+                           'Valve.m',]
+                         ],
+             'one-dim': ['One-Dimensional Reacting Flows',
+                         ['1D', '1D/@Domain1D','1D/@Stack'],
+                         []
+                        ],
+             'data': ['Built-In Thermochemical Data',
+                      [],
+                      ['air.m', 'constants.m', 'gasconstant.m', 'GRI30.m',
+                       'Hydrogen.m', 'Methane.m', 'Nitrogen.m', 'oneatm.m',
+                       'Oxygen.m', 'Water.m',]
+                     ],
+             'utilities': ['Utility Functions',
+                           [],
+                           ['adddir.m', 'ck2cti.m', 'cleanup.m', 'geterr.m',
+                            'importEdge.m', 'importInterface.m',
+                            'importPhase.m', ]
+                           ],
+             'interface': ['Interfaces',
+                           ['@Interface'],
+                           []
+                          ],
+            }
+
+    for fname, lst in files.iteritems():
+        tempenv = env.Clone()
+        tempenv['title'] =  '='*len(lst[0]) + '\n' + lst[0] + '\n' + '='*len(lst[0]) + '\n\n'
+        doc = ''
+        for folder in lst[1]:
+            doc += folder.strip('@') + '\n' + '-'*len(folder.strip('@')) + '\n\n'
+            for f in os.listdir('../interfaces/matlab/toolbox/'+folder):
+                if f[-2:] == '.m':
+                    doc += extract_matlab_docstring(os.path.relpath('../interfaces/matlab/toolbox/'+folder+'/'+f))
+        for f in lst[2]:
+            doc += extract_matlab_docstring(os.path.relpath('../interfaces/matlab/toolbox/'+f))
+            
+        tempenv['matlab_docstrings'] = doc
+        c = tempenv.SubstFile('#doc/sphinx/matlab/code-docs/%s.rst' % fname,
+                          '#doc/sphinx/matlab/code-docs/matlab_template.rst.in')
+        build(c)
+        localenv.Depends(sphinxdocs, c)
+    
     # Matlab examples: create individual documentation pages with the source
     # for each example
     for f in mglob(env, '#samples/matlab', 'm'):

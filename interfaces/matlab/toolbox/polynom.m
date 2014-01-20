@@ -1,13 +1,21 @@
 function poly = polynom(coeffs)
+% Create an instance of class :mat:func:`Func` representing a 
+% polynomial.
 %
-% POLY - create an instance of class 'Func' representing a polynomial.
+% The polynomial coefficients are specified by a vector 
+% ``[a0 a1 .... aN]``. Examples:
 %
-%   The polynomial coefficients are specified by a one-dimensional
-%   array [a0 a1 .... aN].
+% .. code-block:: matlab
 %
-%       polynom([-2 6 3])           3x^2 + 6x - 2
-%       polynom([1.0 -2.5 0 0 2])   2x^4 - 2.5x + 1
+%     polynom([-2 6 3])          %3x^2 + 6.0x - 2
+%     polynom([1.0 -2.5 0 0 2])  %2x^4 - 2.5x + 1
 %
+% :param coeffs:
+%     Vector of polynomial coefficients
+% :return:
+%     Instance of class :mat:func:`Func`
+%
+
 [n m] = size(coeffs);
 if n == 1
     poly = Func('polynomial',m - 1,coeffs);

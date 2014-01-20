@@ -1,12 +1,12 @@
 function q = rop_net(a)
-% ROP_F  Forward rates of progress for all reactions.
+% ROP_NET  Net rates of progress for all reactions.
 %
-%    Q = ROP_F(K)
+%    q = rop_net(a)
 %
-%        Returns a column vector of the forward rates of progress
+%        Returns a column vector of the net rates of progress
 %        for all reactions.
 %
-%    See also: rop_r, rop_net.
+%    See also: rop_f, rop_r.
 %
 q = kinetics_get(a.id,13,0);
 if nargout == 0

@@ -1,13 +1,20 @@
 function w = Water()
-% WATER - Return an object representing water.
+% Return an object representing water.
 %
-%   The object returned by this method implements an accurate equation of
-%   state for water that can be used in the liquid, vapor, saturated
-%   liquid/vapor, and supercritical regions of the phase diagram.  The
-%   equation of state is taken from W. C. Reynolds, "Thermodynamic
-%   Properties in SI."
+% The object returned by this method implements an accurate equation of
+% state for water that can be used in the liquid, vapor, saturated
+% liquid/vapor, and supercritical regions of the phase diagram. The
+% equation of state is taken from
 %
-%   For more details, see classes Cantera::PureFluid and tpx::water in the
-%   Cantera C++ source code documentation.
+% Reynolds, W. C. *Thermodynamic Properties in SI: graphs, tables, and
+% computational equations for forty substances.* Stanford: Stanford
+% University, 1979. Print.
 %
+% For more details, see classes Cantera::PureFluid and tpx::water in the
+% Cantera C++ source code documentation.
+%
+% :return:
+%     Instance of class :mat:func:`Solution`
+%
+
 w = importPhase('liquidvapor.cti','water');

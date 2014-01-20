@@ -1,15 +1,25 @@
 function r = ConstPressureReactor(contents)
-% CONSTPRESSUREREACTOR - Create a ConstPressureReactor object.
+% Create a ConstPressureReactor object.
 %
-%    A ConstPressureReactor is an instance of class Reactor where the pressure
-%    is held constant. The volume is not a state variable, but instead takes
-%    on whatever value is consistent with holding the pressure constant.
+% A :mat:func:`ConstPressureReactor` is an instance of class 
+% :mat:func:`Reactor` where the pressure is held constant. The volume
+% is not a state variable, but instead takes on whatever value is
+% consistent with holding the pressure constant. Examples:
 %
-%        r1 = ConstPressureReactor         % an empty reactor
-%        r2 = ConstPressureReactor(gas)    % a reactor containing a gas
+% .. code-block:: matlab
 %
-%   See also: Reactor
+%     r1 = ConstPressureReactor         % an empty reactor
+%     r2 = ConstPressureReactor(contents)    % a reactor containing contents
 %
+% See also: :mat:func:`Reactor`
+%
+% :param contents:
+%     Cantera :mat:func:`Solution` to be set as the contents of the
+%     reactor
+% :return:
+%     Instance of class :mat:func:`Reactor`
+%
+
 if nargin == 0
     contents = 0;
 end

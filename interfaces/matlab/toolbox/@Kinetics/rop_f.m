@@ -1,7 +1,7 @@
 function q = rop_f(a)
 % ROP_F  Forward rates of progress for all reactions.
 %
-%    Q = ROP_F(K)
+%    q = rop_f(a)
 %
 %        Returns a column vector of the forward rates of progress
 %        for all reactions.

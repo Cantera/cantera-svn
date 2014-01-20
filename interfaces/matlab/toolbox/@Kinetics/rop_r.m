@@ -1,7 +1,7 @@
 function q = rop_r(a)
 % ROP_R  Reverse rates of progress for all reactions.
 %
-%    Q = ROP_R(K)
+%    q=rop_r(a)
 %
 %        Returns a column vector of the reverse rates of progress
 %        for all reactions. The value is zero for irreversible

@@ -1,4 +1,4 @@
-.. _sec-cython-examples:
+.. _sec-matlab-examples:
 
 .. py:currentmodule:: cantera
 

@@ -1,10 +1,17 @@
 function n = Oxygen()
-% OXYGEN - Return an object representing oxygen.
+% Return an object representing oxygen.
 %
-%   The object returned by this method implements an accurate equation of
-%   state for oxygen that can be used in the liquid, vapor, saturated
-%   liquid/vapor, and supercritical regions of the phase diagram.  The
-%   equation of state is taken from W. C. Reynolds, "Thermodynamic
-%   Properties in SI."
+% The object returned by this method implements an accurate equation of
+% state for oxygen that can be used in the liquid, vapor, saturated
+% liquid/vapor, and supercritical regions of the phase diagram.  The
+% equation of state is taken from
 %
+% Reynolds, W. C. *Thermodynamic Properties in SI: graphs, tables, and
+% computational equations for forty substances* Stanford: Stanford
+% University, 1979. Print.
+%
+% :return:
+%     Instance of class :mat:func:`Solution`
+%
+
 n = importPhase('liquidvapor.cti','oxygen');

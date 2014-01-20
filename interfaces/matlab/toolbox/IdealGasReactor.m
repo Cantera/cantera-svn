@@ -1,15 +1,24 @@
 function r = IdealGasReactor(contents)
-% IDEALGASREACTOR - Create an IdealGasReactor object.
+% Create an IdealGasReactor object.
 %
-%    An IdealGasReactor is an instance of class Reactor where the governing
-%    equations are specialized for the ideal gas equation of state (and do not
-%    work correctly with other thermodynamic models).
+% An IdealGasReactor is an instance of class Reactor where the governing
+% equations are specialized for the ideal gas equation of state (and do not
+% work correctly with other thermodynamic models). Examples:
 %
-%        r1 = IdealGasReactor         % an empty reactor
-%        r2 = IdealGasReactor(gas)    % a reactor containing a gas
+% .. code-block:: matlab
 %
-%   See also: Reactor
+%     r1 = IdealGasReactor         % an empty reactor
+%     r2 = IdealGasReactor(gas)    % a reactor containing a gas
 %
+% See also: :mat:func:`Reactor`
+%
+% :param contents:
+%     Cantera :mat:func:`Solution` to be set as the contents of the
+%     reactor
+% :return:
+%     Instance of class :mat:func:`Reactor`
+%
+
 if nargin == 0
     contents = 0;
 end

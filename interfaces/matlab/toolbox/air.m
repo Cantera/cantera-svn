@@ -1,7 +1,12 @@
 function gas = air
-% AIR - create an object representing air.
+% Create an object representing air.
 %
-%    Air is modeled as an ideal gas mixture, and several reactions
-%    are defined.  The specification is taked from file air.xml.
+% Air is modeled as an ideal gas mixture. The specification is taken
+% from file air.cti. Several reactions among oxygen and nitrogen are
+% defined.
 %
+% :return:
+%     Instance of class :mat:func:`Solution`
+%
+
 gas = importPhase('air.cti','air');

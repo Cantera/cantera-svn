@@ -29,7 +29,7 @@ elseif nargin == 3
     kvals = species;
     ivals = rxns;
 else
-    error('Syntax error. type ''help stoich_r'' for more information.')
+    error('Syntax error. type ''help stoich_p'' for more information.')
 end
 
 for k = kvals
