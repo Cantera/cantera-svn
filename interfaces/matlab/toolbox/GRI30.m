@@ -34,6 +34,8 @@ elseif nargin == 1
         s = Solution('gri30.cti','gri30_mix');
     elseif strcmp(tr,'Multi')
         s = Solution('gri30.cti','gri30_multi');
+    else
+        error('Unknown transport specified. "Mix" or "Multi" are supported.')
     end
 else
     error('wrong number of arguments');

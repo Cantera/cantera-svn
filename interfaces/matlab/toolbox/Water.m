@@ -17,4 +17,4 @@ function w = Water()
 %     Instance of class :mat:func:`Solution`
 %
 
-w = importPhase('liquidvapor.cti','water');
+w = Solution('liquidvapor.cti','water');

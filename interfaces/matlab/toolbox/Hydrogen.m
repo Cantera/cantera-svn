@@ -1,4 +1,4 @@
-function n = Hydrogen()
+function h = Hydrogen()
 % Return an object representing hydrogen.
 %
 % The object returned by this method implements an accurate equation of
@@ -17,4 +17,4 @@ function n = Hydrogen()
 %     Instance of class :mat:func:`Solution`
 %
 
-n = importPhase('liquidvapor.cti','hydrogen');
+h = Solution('liquidvapor.cti','hydrogen');

@@ -1,4 +1,4 @@
-function n = Oxygen()
+function o = Oxygen()
 % Return an object representing oxygen.
 %
 % The object returned by this method implements an accurate equation of
@@ -14,4 +14,4 @@ function n = Oxygen()
 %     Instance of class :mat:func:`Solution`
 %
 
-n = importPhase('liquidvapor.cti','oxygen');
+o = Solution('liquidvapor.cti','oxygen');

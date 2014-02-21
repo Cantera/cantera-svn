@@ -9,4 +9,4 @@ function gas = air
 %     Instance of class :mat:func:`Solution`
 %
 
-gas = importPhase('air.cti','air');
+gas = Solution('air.cti','air');

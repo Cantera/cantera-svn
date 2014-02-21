@@ -1,4 +1,4 @@
-function n = Methane()
+function m = Methane()
 % Return an object representing methane.
 %
 % The object returned by this method implements an accurate equation of
@@ -14,4 +14,4 @@ function n = Methane()
 %     Instance of class :mat:func:`Solution`
 %
 
-n = importPhase('liquidvapor.cti','methane');
+m = Solution('liquidvapor.cti','methane');

@@ -14,4 +14,4 @@ function n = Nitrogen()
 %     Instance of class :mat:func:`Solution`
 %
 
-n = importPhase('liquidvapor.cti','nitrogen');
+n = Solution('liquidvapor.cti','nitrogen');
