@@ -29,12 +29,12 @@ tdot = - temperature(gas) * gasconstant * enthalpies_RT(gas)' ...
     * wdot / (density(gas)*cp_mass(gas));
 
 % set up column vector for dydt
+nsp = nSpecies(gas);
 dydt = [ tdot
-    zeros(53,1) ];
+    zeros(nsp,1) ];
 
 % species equations
 rrho = 1.0/density(gas);
-nsp = nSpecies(gas);
 for i = 1:nsp
     dydt(i+1) = rrho*mw(i)*wdot(i);
 end
