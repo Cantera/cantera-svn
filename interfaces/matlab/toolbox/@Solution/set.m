@@ -1,39 +1,50 @@
-function a = set(a,varargin)
-% SET -  Set properties.
+function set(a,varargin)
+% Set properties of a :mat:func:`Solution`.
 %
-%   The properties that may be set are
+% The properties that may be set are
 %
-%   Temperature    (T)
-%   Density        (Rho)
-%   Volume         (V)
-%   Pressure       (P)
-%   Enthalpy       (H)
-%   Entropy        (S)
-%   MoleFractions  (X)
-%   MassFractions  (Y)
-%   Vapor Fraction (Vapor)
-%   Liquid Fractio (Liquid)
+% Temperature     (T)
+% Density         (Rho)
+% Volume          (V)
+% Pressure        (P)
+% Enthalpy        (H)
+% Entropy         (S)
+% Mole Fractions  (X)
+% Mass Fractions  (Y)
+% Vapor Fraction  (Vapor)
+% Liquid Fraction (Liquid)
 %
-%   Either the full property name or the symbol may be
-%   specified. For the extensive properties (V,H,U,S), the values
-%   must be given per unit mass. H, U, and S must be set in
-%   conjunction with pressure (for H,S) or volume (for U,S). Either
-%   (specific) volume or density may be specified. Mole and mass
-%   fractions must be input as vectors (either row or column) with
-%   length equal to the number of species.
+% Either the full property name or the symbol may be
+% specified. For the extensive properties (V,H,U,S), the values
+% must be given per unit mass. H, U, and S must be set in
+% conjunction with pressure (for H,S) or volume (for U,S). Either
+% (specific) volume or density may be specified. Mole and mass
+% fractions must be input as vectors (either row or column) with
+% length equal to the number of species. Two properties may be
+% specified in a single call to :mat:func:`set`, plus one of
+% mass fractions or mole fractions.
 %
-%   Examples:
+% Examples:
 %
-%      set(gas,'Temperature',600.0);
-%      set(gas,'T',600.0);
-%      set(gas,'T',600.0,'P',2*oneatm,'Y',massfracs);
-%      set(gas,'H',0.5*enthalpy_mass(gas),'P',pressure(gas));
-%      set(gas,'S',entropy_mass(gas),'P',0.5*pressure(gas));
-%      set(gas,'X',ones(nSpecies(gas),1));
-%      set(gas,'T',500.0,'Vapor',0.8)
+%    >> set(gas,'Temperature',600.0);
+%    >> set(gas,'T',600.0);
+%    >> set(gas,'T',600.0,'P',2*oneatm,'Y',massfracs);
+%    >> set(gas,'H',0.5*enthalpy_mass(gas),'P',pressure(gas));
+%    >> set(gas,'S',entropy_mass(gas),'P',0.5*pressure(gas));
+%    >> set(gas,'X',ones(nSpecies(gas),1));
+%    >> set(gas,'T',500.0,'Vapor',0.8)
 %
-%  Alternatively, individual methods to set properties may be
-%  called (setTemperature, setMoleFractions, etc.)
+% Alternatively, individual methods to set properties may be
+% called (setTemperature, setMoleFractions, etc.)
+%
+% See also: :mat:func:`setMassFractions`, :mat:func:`setMoleFractions`,
+% :mat:func:`setPressure`, :mat:func:`setState_HP`, :mat:func:`setState_SP`,
+% :mat:func:`setState_SV`, :mat:func:`setState_UV`, :mat:func:`setTemperature`
+%
+% :param a:
+%     Instance of class :mat:func:`Solution`
+% :param varargin:
+%     Comma separated list of ``property, value`` pairs to be set
 %
 
 property_argin = varargin;

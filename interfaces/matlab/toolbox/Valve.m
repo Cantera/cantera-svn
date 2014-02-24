@@ -27,7 +27,7 @@ function v = Valve(upstream, downstream)
 %     Downstream Reactor or reservoir
 %
 % :return:
-%     v, Instance of class :mat:func:`FlowDevice`
+%     Instance of class :mat:func:`FlowDevice`
 %
 
 v = FlowDevice(3);

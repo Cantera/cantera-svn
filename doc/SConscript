@@ -75,64 +75,64 @@ if localenv['sphinx_docs']:
 
     files = {
              'importing':['Importing Phase Objects',
-                          ['@Solution'],
-                          ['IdealGasMix.m']
-                         ],
-             'thermodynamics': ['Thermodynamic Properties',
-                                ['@Mixture', '@ThermoPhase'],
-                                []
-                               ],
-             'kinetics': ['Chemical Kinetics',
-                          ['@Kinetics'],
-                          []
-                         ],
-             'transport': ['Transport Properties',
-                           ['@Transport'],
-                           []
+                          [['@Solution'], ['IdealGasMix.m', 'importPhase.m']],
+                          [['@Mixture'], []],
                           ],
+             'thermodynamics': ['Thermodynamic Properties',
+                                [['@ThermoPhase'], []],
+                                ],
+             'kinetics': ['Chemical Kinetics',
+                          [['@Kinetics'], []],
+                          ],
+             'transport': ['Transport Properties',
+                           [['@Transport'], []],
+                           ],
              'zero-dim': ['Zero-Dimensional Reactor Networks',
-                          ['@Func', '@Reactor', '@ReactorNet', '@FlowDevice',
-                           '@Wall'],
-                          ['conhp.m', 'ConstPressureReactor.m', 'conuv.m',
-                           'FlowReactor.m', 'gaussian.m',
-                           'IdealGasConstPressureReactor.m',
-                           'IdealGasReactor.m', 'MassFlowController.m',
-                           'polynom.m', 'reactor_ode.m', 'Reservoir.m',
-                           'Valve.m',]
-                         ],
+                          [['@Func'], ['gaussian.m','polynom.m']],
+                          [['@Reactor'],
+                           ['conhp.m', 'ConstPressureReactor.m', 'conuv.m',
+                            'FlowReactor.m', 'IdealGasConstPressureReactor.m',
+                            'IdealGasReactor.m', 'reactor_ode.m',
+                            'Reservoir.m',
+                            ]],
+                          [['@ReactorNet'], []],
+                          [['@FlowDevice'], ['MassFlowController.m', 'Valve.m']],
+                          [['@Wall'], []],
+                          ],
              'one-dim': ['One-Dimensional Reacting Flows',
-                         ['1D', '1D/@Domain1D','1D/@Stack'],
-                         []
-                        ],
+                         [['1D', '1D/@Domain1D', '1D/@Stack'], []],
+                         ],
              'data': ['Built-In Thermochemical Data',
-                      [],
+                      [[],
                       ['air.m', 'constants.m', 'gasconstant.m', 'GRI30.m',
                        'Hydrogen.m', 'Methane.m', 'Nitrogen.m', 'oneatm.m',
-                       'Oxygen.m', 'Water.m',]
-                     ],
+                       'Oxygen.m', 'Water.m']],
+                       ],
              'utilities': ['Utility Functions',
-                           [],
-                           ['adddir.m', 'ck2cti.m', 'cleanup.m', 'geterr.m',
-                            'importEdge.m', 'importInterface.m',
-                            'importPhase.m', ]
-                           ],
+                           [[], ['adddir.m', 'ck2cti.m', 'cleanup.m', 'geterr.m']],
+                           [['@XML_Node'], []],
+                            ],
              'interface': ['Interfaces',
-                           ['@Interface'],
-                           []
-                          ],
+                           [['@Interface'], ['importEdge.m', 'importInterface.m']],
+                           ],
             }
 
-    for fname, lst in files.iteritems():
+    for fname, items in files.iteritems():
         tempenv = env.Clone()
-        tempenv['title'] =  '='*len(lst[0]) + '\n' + lst[0] + '\n' + '='*len(lst[0]) + '\n\n'
+        title = items[0]
+        tempenv['title'] =  '='*len(title) + '\n' + title + '\n' + '='*len(title)
         doc = ''
-        for folder in lst[1]:
-            doc += folder.strip('@') + '\n' + '-'*len(folder.strip('@')) + '\n\n'
-            for f in os.listdir('../interfaces/matlab/toolbox/'+folder):
-                if f[-2:] == '.m':
-                    doc += extract_matlab_docstring(os.path.relpath('../interfaces/matlab/toolbox/'+folder+'/'+f))
-        for f in lst[2]:
-            doc += extract_matlab_docstring(os.path.relpath('../interfaces/matlab/toolbox/'+f))
+        base = '../interfaces/matlab/toolbox'
+        for lists in items[1:]:
+            for folder in lists[0]:
+                doc += folder.strip('@') + '\n' + '-'*len(folder.strip('@')) + '\n\n'
+                files = sorted(os.listdir(os.path.join(base,folder)))
+                # files = sorted(files + lists[1])
+                for f in files:
+                    if f.endswith('.m'):
+                        doc += extract_matlab_docstring(os.path.relpath(os.path.join(base,folder,f)))
+            for f in lists[1]:
+                doc += extract_matlab_docstring(os.path.relpath(os.path.join(base,f)))
             
         tempenv['matlab_docstrings'] = doc
         c = tempenv.SubstFile('#doc/sphinx/matlab/code-docs/%s.rst' % fname,

@@ -1,18 +1,36 @@
 function setMultiplier(a,irxn,v)
-% SETMULTIPLIER  Set the rate of progress multiplier.
+% Set the multiplier for reaction rate of progress.
 %
-%    SETMULTIPLIER(K, IRXN, V) sets the multipler for reaction IRXN
-%    to value V.
+% The multiplier multiplies the reaction rate of progress. It may
+% be used to implement sensitivity analysis, or to selectively
+% disable reactions.  For reversible reactions, it multiplies both
+% the forward and reverse rates. By default, the multiplier value
+% is 1.0, but the current value may be checked by calling method
+% :mat:func:`multiplier`.
 %
-%    see also: MULTIPLIER
+% If only two arguments are given, it is assumed that the second is
+% the desired multiplication factor for all of the reactions.
 %
+% :param a:
+%     Instance of class :mat:func:`Kinetics` (or another
+%     object containing an instance of that class)
+%     for which the multipliers are desired.
+% :param irxn:
+%     Integer or vector of integers. Reaction number(s) for which
+%     the multiplier should be set. Optional.
+% :param v:
+%     Value by which the reaction rate of progress should be multiplied
+%
+
 if nargin == 2
     v = irxn;
     m = nReactions(a);
     irxn = (1:m)';
     n = 1;
-else
+elseif nargin == 3
     [m, n] = size(irxn);
+else
+    error('setMultiplier requires 2 or 3 arguments.')
 end
 
 for jm = 1:m

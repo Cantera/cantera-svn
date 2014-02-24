@@ -1,14 +1,18 @@
 function cdot = creationRates(a)
-% CREATIONRATES  Chemical creation rates (kmol/m^3/s).
+% Chemical creation rates (kmol/m^3/s).
 %
-%    cdot = creationRates(K)
+% See also: :mat:func:`destructionRates`, :mat:func:`netProdRates`
 %
-%        Returns a column vector of the creation rates of all
-%        species. If the output is not assigned to a variable, a
-%        bar graph is produced.
+% :param a:
+%     Instance of class :mat:func:`Kinetics` (or another
+%     object containing an instance of that class)
+%     for which creation rates are desired.
+% :return:
+%     Returns a column vector of the creation rates of all
+%     species. If the output is not assigned to a variable, a
+%     bar graph is produced.
 %
-%    See also: destructionRates, netProdRates.
-%
+
 cdot = kinetics_get(a.id,21,0);
 if nargout == 0
     figure

@@ -1,6 +1,12 @@
 function moles = phaseMoles(self, n)
-% PHASEMOLES - moles of phase number 'n' (kmol).
+% :param self:
+%     Instance of class :mat:func:`Mixture`
+% :param n:
+%     Integer phase number in the input
+% :return:
+%     Moles of phase number ``n`` (kmol).
 %
+
 if nargin == 2
     moles = mixturemethods(28, mix_hndl(self), n);
 elseif nargin == 1

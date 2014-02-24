@@ -1,5 +1,10 @@
 function b = subsref(a,s)
-% SUBSREF
+% :param a:
+% :param s:
+% :return:
+%     Returns a vector
+%
+
 switch s.type
     case '()'
         ind = s.subs{:};

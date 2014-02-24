@@ -1,9 +1,10 @@
 function mdot = massFlowRate(f, time)
-% MASSFLOWRATE - mass flow rate in kg/s
+% :param f:
+%     Instance of class :mat:func:`MassFlowController`
+% :param time:
+%     Time at which the mass flow rate is desired
+% :return:
+%     The mass flow rate through the :mat:func:`FlowDevice` at the given time
 %
-%   mdot = massFlowRate(f, time)
-%         
-%      Return the mass flow rate of the flow device ``f`` at time
-%      ``time``.
-%
+
 mdot = flowdevicemethods(21, f.index, time);

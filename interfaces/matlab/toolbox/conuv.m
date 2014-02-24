@@ -14,6 +14,8 @@ function dydt = conuv(t,y,gas,mw) %#ok<INUSL>
 %       - 1  - Temperature
 %       - 2+ - Species mass fractions
 %
+% :param gas:
+%     Ideal gas reacting mixture
 % :param mw:
 %     Vector of molecular weights of the species.
 % :return:

@@ -1,33 +1,39 @@
 function m = Mixture(phases)
 %
-% MIXTURE - Multiphase mixtures.
+% Class constructor for multiphase mixtures.
 %
-%    Class Mixture represents
-%    mixtures of one or more phases of matter.  To construct a mixture,
-%    supply a cell array of phases and mole numbers:
+% Class Mixture represents
+% mixtures of one or more phases of matter.  To construct a mixture,
+% supply a cell array of phases and mole numbers::
 %
-%    >> gas = importPhase('gas.cti');
-%    >> graphite = importPhase('graphite.cti');
-%    >> mix = Mixture({gas, 1.0; graphite, 0.1});
+%     >> gas = importPhase('gas.cti');
+%     >> graphite = importPhase('graphite.cti');
+%     >> mix = Mixture({gas, 1.0; graphite, 0.1});
 %
-%    Phases may also be added later using the addPhase method:
+% Phases may also be added later using the addPhase method::
 %
-%    >> water = importPhase('water.cti');
-%    >> addPhase(mix, water, 3.0);
+%     >> water = importPhase('water.cti');
+%     >> addPhase(mix, water, 3.0);
 %
-%    Note that the objects representing each phase compute only the
-%    intensive state of the phase -- they do not store any information
-%    on the amount of this phase. Mixture objects, on the other hand,
-%    represent the full extensive state.
+% Note that the objects representing each phase compute only the
+% intensive state of the phase -- they do not store any information
+% on the amount of this phase. Mixture objects, on the other hand,
+% represent the full extensive state.
 %
-%    Mixture objects are 'lightweight' in the sense that they do not
-%    store parameters needed to compute thermodynamic or kinetic
-%    properties of the phases. These are contained in the
-%    ('heavyweight') phase objects. Multiple mixture objects may be
-%    constructed using the same set of phase objects. Each one stores
-%    its own state information locally, and synchronizes the phase
-%    objects whenever it requires phase properties.
+% Mixture objects are 'lightweight' in the sense that they do not
+% store parameters needed to compute thermodynamic or kinetic
+% properties of the phases. These are contained in the
+% ('heavyweight') phase objects. Multiple mixture objects may be
+% constructed using the same set of phase objects. Each one stores
+% its own state information locally, and synchronizes the phase
+% objects whenever it requires phase properties.
 %
+% :param phases:
+%     Cell array of phases and mole numbers
+% :return:
+%     Instance of class :mat:func:`Mixture`
+%
+
 if nargin > 1
     error('Mixture: wrong number of arguments');
 end
@@ -48,7 +54,7 @@ if nargin == 1
     % the mole numbers of each phase
     [np nc] = size(phases);
     if nc ~= 2
-        error('wrong size for phases cell array');
+        error('Cell array of phases should have each phase on a new row');
     end
     for n = 1:np
         addPhase(m, phases{n,1}, phases{n,2});

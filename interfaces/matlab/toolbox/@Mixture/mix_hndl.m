@@ -1,4 +1,8 @@
 function i = mix_hndl(self)
-% MIX_HNDL - integer used to access kernel object
+% :param self:
+%     Instance of :mat:func:`Mixture`
+% :return:
+%     Integer used to access kernel object
 %
+
 i = self.mixindex;

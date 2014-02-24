@@ -1,12 +1,29 @@
 function x = ReactorNet(reactors)
-% REACTOR - Create a ReactorNet object.
+% Create a :mat:func:`ReactorNet` object.
 %
-%    A ReactorNet object is a container that holds one or more
-%    Reactor objects.
+% A :mat:func:`ReactorNet` object is a container that holds one
+% or more Reactor objects in a network. :mat:func:`ReactorNet`
+% objects are used to simultaneously advance the state of one or
+% more coupled reactors.
 %
-if nargin == 1
-else
-    error('wrong number of arguments to ReactorNet constructor');
+% Example::
+%
+%     >> r1 = Reactor(gas1)
+%     >> r2 = Reactor(gas2)
+%     >> <... install walls, inlets, outlets, etc...>
+%
+%     >> reactor_network = ReactorNet({r1, r2})
+%     >> advance(reactor_network, time)
+%
+% :param reactors:
+%     A single instance of :mat:func:`Reactor` or a cell array
+%     of instances of :mat:func:`Reactor`
+% :return:
+%     Instance of class :mat:func:`ReactorNet`
+%
+
+if nargin ~= 1
+    error('Wrong number of arguments to ReactorNet constructor.');
 end
 
 if isa(reactors, 'Reactor')

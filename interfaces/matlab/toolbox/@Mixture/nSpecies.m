@@ -1,4 +1,8 @@
 function n = nSpecies(self)
-% NSPECIES - number of species
+% :param self:
+%     Instance of class :mat:func:`Mixture`
+% :return:
+%     Number of species in the input
 %
+
 n = mixturemethods(24, mix_hndl(self));

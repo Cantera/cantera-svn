@@ -9,7 +9,7 @@ function m = MassFlowController(upstream, downstream)
 % should be used to install the :mat:func:`MassFlowController` between
 % reactors.
 %
-% see also: :mat:func:`FlowDevice`
+% see also: :mat:func:`FlowDevice`, :mat:func:`Valve`
 %
 % :param upstream:
 %     Upstream :mat:func:`Reactor` or :mat:func:`Reservoir`

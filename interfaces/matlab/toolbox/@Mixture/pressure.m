@@ -1,4 +1,8 @@
-function n = pressure(self)
-% PRESSURE - pressure (Pa)
+function p = pressure(self)
+% :param self:
+%     Instance of class :mat:func:`Mixture`
+% :return:
+%     Pressure (Pa)
 %
-n = mixturemethods(26, mix_hndl(self));
+
+p = mixturemethods(26, mix_hndl(self));

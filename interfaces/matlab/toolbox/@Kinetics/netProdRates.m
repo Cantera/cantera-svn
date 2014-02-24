@@ -1,14 +1,18 @@
 function wdot = netProdRates(a)
-% NETPRODRATES  Net chemical production rates for all species.
+% Net chemical production rates for all species.
 %
-%    wdot = netProdRates(a)
+% See also: :mat:func:`creationRates`, :mat:func:`destructionRates`
 %
-%        Returns a column vector of the net production (creation -
-%        destruction) rates of all species. If the output is not
-%        assigned to a variable, a bar plot is produced.
+% :param a:
+%     Instance of class :mat:func:`Kinetics` (or another
+%     object containing an instance of that class)
+%     for which net production rates are desired.
+% :return:
+%     Returns a column vector of the net production (creation -
+%     destruction) rates of all species. If the output is not
+%     assigned to a variable, a bar plot is produced.
 %
-%    See also: creationRates, destructionRates
-%
+
 wdot = kinetics_get(a.id,23,0);
 if nargout == 0
     figure

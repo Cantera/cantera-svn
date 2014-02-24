@@ -1,4 +1,8 @@
 function i = func_hndl(f)
-% FUNC_HNDL -
+% :param f:
+%     Instance of class :mat:func:`Func`
+% :return:
+%     The handle of the input function
 %
+
 i = f.index;

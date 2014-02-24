@@ -1,12 +1,14 @@
 function u = intEnergy_mass(r)
-% INTENERGY_MASS - the specific internal energy [J/kg].
+% The specific internal energy in J/kg.
 %
-%       u = intEnergy_mass(r)
+% See also: :mat:func:`enthalpy_mass`
 %
-%    returns the specific internal energy of the reactor contents at
-%    the end of the last call to 'advance' or 'step.'
+% :param r:
+%     Instance of class :mat:func:`Reactor`
+% :return:
+%     The specific internal energy of the reactor contents at the
+%     end of the last call to :mat:func:`advance` or :mat:func:`step`.
+%     The internal energy is retrieved from the solution vector.
 %
-%    See also: Reactor/enthalpy_mass, Reactor/entropy_mass,
-%    Reactor/enthalpy_mole
-%
+
 u = reactormethods(28, reactor_hndl(r));

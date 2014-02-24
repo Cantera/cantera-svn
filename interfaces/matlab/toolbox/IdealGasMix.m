@@ -1,5 +1,5 @@
 function s = IdealGasMix(infile,b,c)
-% Create a Solution instance representing an ideal gas mixture. ::
+% Create a :mat:func:`Solution` instance representing an ideal gas mixture. ::
 %
 %     gas1 = IdealGasMix('ctml_file'[,'transport_model'])
 %     gas2 = IdealGasMix('ck_file'[,'thermo_db'[,'tran_db'[,'transport_model']]])
@@ -39,7 +39,7 @@ function s = IdealGasMix(infile,b,c)
 %     specified with ``infile``, this is the filename of the
 %     thermodynamic database, if required.
 % :param c:
-%     If a CHEMKIN format file is specified with ``infile, this is the
+%     If a CHEMKIN format file is specified with ``infile``, this is the
 %     filename of the transport database, if required.
 % :return:
 %     Instance of class :mat:func:`Solution`

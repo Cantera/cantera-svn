@@ -1,5 +1,11 @@
 function b = soundspeed(a)
-%  SOUNDSPEED  - Speed of sound (m/s).
+% Speed of sound (m/s).
+%
+% :param a:
+%     Instance of class :mat:func:`Solution`
+% :return:
+%     The speed of sound in m/s
+%
 
 if isIdealGas(a)
     gamma = cp_mass(a)/cv_mass(a);

@@ -1,5 +1,5 @@
 function setMaxTimeStep(r, maxstep)
-% SETMAXTIMESTEP - Set the maximum time step.
+% Set the maximum time step.
 %
 % The integrator chooses a step size based on the desired error
 % tolerances and the rate at which the solution is changing. In
@@ -9,4 +9,10 @@ function setMaxTimeStep(r, maxstep)
 % problems later. Use this method to set an upper bound on the
 % timestep.
 %
+% :param r:
+%     Instance of class :mat:func:`ReactorNet`
+% :param maxstep:
+%     Maximum time step
+%
+
 reactornetmethods(6, reactornet_hndl(r), maxstep);

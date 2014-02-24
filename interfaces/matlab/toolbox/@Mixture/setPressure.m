@@ -1,4 +1,10 @@
 function setPressure(self, P)
-% SETPRESSURE - set the mixture pressure (Pa)
+% Set the mixture pressure (Pa)
 %
+% :param self:
+%     Instance of class :mat:func:`Mixture`
+% :param P:
+%     Pressure (Pa)
+%
+
 mixturemethods(6, mix_hndl(self), P);

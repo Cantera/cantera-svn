@@ -1,7 +1,10 @@
 function setTolerances(r, rtol, atol)
-% SETTOLERANCES - Set error tolerances.
+% Set error tolerances for the solution.
 %
-% rtol - scalar relative error tolerance
-% atol - scalar absolute error tolerance
+% :param rtol:
+%     Scalar relative error tolerance
+% :param atol:
+%     Scalar absolute error tolerance
 %
+
 reactornetmethods(7, reactornet_hndl(r), rtol, atol);
