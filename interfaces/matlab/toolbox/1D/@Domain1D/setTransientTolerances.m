@@ -1,4 +1,4 @@
-function d = setSteadyTolerances(d, component, rtol, atol)
+function d = setTransientTolerances(d, component, rtol, atol)
 % SETSTEADYTOLERANCES -
 %
 if strcmp(component,'default')

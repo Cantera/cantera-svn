@@ -10,5 +10,10 @@ function y = massFraction(r, species)
 %     end of the last call to :mat:func:`advance` or :mat:func:`step`.
 %
 
-k = speciesIndex(r.contents, species) - 1;
+if ischar(species)
+    k = speciesIndex(r.contents, species) - 1;
+else
+    k = species - 1;
+end
+
 y = reactormethods(30, reactor_hndl(r), k);

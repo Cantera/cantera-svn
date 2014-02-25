@@ -1,4 +1,4 @@
-function setInitialVolume(r, t0)
+function setInitialVolume(r, v0)
 % Set the initial reactor volume
 %
 % :param r:
@@ -7,4 +7,4 @@ function setInitialVolume(r, t0)
 %     Initial volume. Units: m**3
 %
 
-reactormethods(4, reactor_hndl(r), t0);
+reactormethods(4, reactor_hndl(r), v0);
