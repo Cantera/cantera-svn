@@ -1,5 +1,12 @@
 function setPressure(tp,p)
+% The pressure is set by changing the density holding the
+% temperature and chemical composition fixed.
 %
+% :param tp:
+%     Instance of class :mat:func:`ThermoPhase` (or another
+%     class derived from ThermoPhase)
+% :param p:
+%     Pressure. Units: Pa
 %
 
 if p <= 0.0

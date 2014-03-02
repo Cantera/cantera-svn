@@ -1,7 +1,12 @@
-function wtm = meanMolarMass(p)
-% MEANMOLARMASS - Mean molar mass [kg/kmol].
+function wtm = meanMolarMass(tp)
+% The mean molar mass is the mole-fraction-weighted sum of the
+% molar masses of the individual species in the phase.
 %
-%   The mean molar mass is the mole-fraction-weighted sum of the
-%   molar masses of the individual species in the phase.
+% :param tp:
+%     Instance of class :mat:func:`ThermoPhase` (or another
+%     object that derives from ThermoPhase)
+% :return:
+%     Scalar double mean molar mass. Units: kg/kmol
 %
-wtm = phase_get(p.tp_id,4);
+
+wtm = phase_get(tp.tp_id,4);

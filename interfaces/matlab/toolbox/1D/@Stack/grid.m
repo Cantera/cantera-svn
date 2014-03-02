@@ -1,6 +1,15 @@
-function z = grid(s, d)
-% GRID - the grid in one domain.
+function z = grid(s, name)
+% The grid in one domain.
 %
-n = domainIndex(s,d);
+% :param s:
+%     Instance of class :mat:func:`Stack`
+% :param name:
+%     Name of the domain for which the grid
+%     should be retrieved.
+% :return:
+%     The grid in domain name
+%
+
+n = domainIndex(s,name);
 d = s.domains(n);
 z = gridPoints(d);

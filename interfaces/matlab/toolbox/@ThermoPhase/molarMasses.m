@@ -1,4 +1,8 @@
-function x = molarMasses(a)
-% MOLARMASSES - Array of species molar masses [kg/kmol].
+function x = molarMasses(tp)
+% :param tp:
+%     Instance of class :mat:func:`ThermoPhase` (or another
+%     object that derives from ThermoPhase)
+% :return:
+%     Vector of species molar masses. Units: kg/kmol
 %
-x = phase_get(a.tp_id,22);
+x = phase_get(tp.tp_id,22);

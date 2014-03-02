@@ -33,7 +33,8 @@ if localenv['sphinx_docs']:
                                  '#doc/sphinx/cython/examples/example-script.rst.in')
             build(b)
             localenv.Depends(sphinxdocs, b)
-    
+
+    # Set up functions to pseudo-autodoc the MATLAB toolbox
     def extract_matlab_docstring(mfile):
         """
             Return the docstring from mfile, assuming that it consists of the
@@ -41,7 +42,24 @@ if localenv['sphinx_docs']:
         """
         docstring = ".. mat:function:: "
         with open(mfile, 'r') as in_file:
+            # The function name is read from the first line
             docstring += get_function_name(in_file.readline()) + '\n'
+            # By convention, the second line (called H1 in the MATLAB documentation)
+            # is read by various MATLAB functions, so it should be in the format
+            # MATLAB expects - FUNCTIONNAME  Summary. We read in this line and
+            # add the summary to the docstring. If the line doesn't match the
+            # format, just write it to the docstring as is.
+            line = in_file.readline()
+            try:
+                docstring += '    ' + line.split('  ')[1] + '\n'
+            except IndexError:
+                docstring += line + '\n'
+            # Skip the next line, which is a duplicate of the first. It is here
+            # because MATLAB doesn't show the function definition in its help.
+            in_file.readline()
+
+            # For the rest of the lines in the file, get the line if it is
+            # in the first unbroken comment section and add it to the docstring.
             for i, line in enumerate(in_file.readlines()):
                 try:
                     if line.lstrip().startswith('%'):
@@ -50,13 +68,12 @@ if localenv['sphinx_docs']:
                         break
                 except IndexError:
                     docstring += '\n'
-                    
+
         return docstring + '\n'
 
-        
     def get_function_name(str):
         """
-            Return the function or classdef signature, assuming that 
+            Return the function or classdef signature, assuming that
             the string starts with either 'function ' or 'classdef '.
         """
         if str.startswith('function '):
@@ -66,13 +83,23 @@ if localenv['sphinx_docs']:
         else:
             print "Unknown function declaration in MATLAB document", str
 
-        # return sig
+        # Split the function signature on the equals sign, if it exists.
+        # We don't care about what comes before the equals sign, since
+        # if a function returns, the docs will tell us. If there is no
+        # =, return the whole signature.
         if '=' in sig:
             idx = sig.index('=')
             return sig[idx+2:]
         else:
             return sig
 
+    # This dictionary lists every class in the toolbox, plus all the files in
+    # the root toolbox directory. The keys of the dictionary are the file names
+    # to which the documentation will be written. The value associated with each
+    # key is a list. The first element of the list is the header of the page. The
+    # other elements are lists of lists. The first of these nested lists is the
+    # class folder, the second is the files associated with a class in the root
+    # toolbox folder. Either of these lists may be empty.
     files = {
              'importing':['Importing Phase Objects',
                           [['@Solution'], ['IdealGasMix.m', 'importPhase.m']],
@@ -100,7 +127,12 @@ if localenv['sphinx_docs']:
                           [['@Wall'], []],
                           ],
              'one-dim': ['One-Dimensional Reacting Flows',
-                         [['1D', '1D/@Domain1D', '1D/@Stack'], []],
+                         [[],
+                         ['1D/AxiStagnFlow.m', '1D/AxisymmetricFlow.m',
+                          '1D/FreeFlame.m', '1D/Inlet.m',
+                          '1D/npflame_init.m', '1D/Outlet.m', '1D/OutletRes.m',
+                          '1D/Surface.m', '1D/SymmPlane.m']],
+                         [['1D/@Domain1D', '1D/@Stack'], []],
                          ],
              'data': ['Built-In Thermochemical Data',
                       [[],
@@ -117,29 +149,43 @@ if localenv['sphinx_docs']:
                            ],
             }
 
+    # Loop through all the items in the files dictionary
     for fname, items in files.iteritems():
         tempenv = env.Clone()
         title = items[0]
+        # Set the title header
         tempenv['title'] =  '='*len(title) + '\n' + title + '\n' + '='*len(title)
         doc = ''
+        # The base directory of the MATLAB toolbox relative to the sphinx build directory
         base = '../interfaces/matlab/toolbox'
+        # Loop through the lists of lists
         for lists in items[1:]:
+            # Loop through all the @folder names in the first nested list
             for folder in lists[0]:
-                doc += folder.strip('@') + '\n' + '-'*len(folder.strip('@')) + '\n\n'
+                # Set the subheader based on the class name
+                doc += folder.split('@')[1] + '\n' + '-'*len(folder.split('@')[1]) + '\n\n'
+                # Alphabetically sort the list of files in the @folder
                 files = sorted(os.listdir(os.path.join(base,folder)))
+                # @todo: consider sorting the files in the base folder with the rest of the files
                 # files = sorted(files + lists[1])
+                # Loop through each file in the sorted list
                 for f in files:
                     if f.endswith('.m'):
                         doc += extract_matlab_docstring(os.path.relpath(os.path.join(base,folder,f)))
+            # Loop through the files in the second nested list. These files are in the base folder
             for f in lists[1]:
                 doc += extract_matlab_docstring(os.path.relpath(os.path.join(base,f)))
-            
+
         tempenv['matlab_docstrings'] = doc
+        # Substitute the docstrings into the proper file. Since the docs change
+        # every time the source is changed, we don't want to have to commit the
+        # change in the rst file as well as the source - too much code churn. So
+        # we use a template and a SubstFile directive.
         c = tempenv.SubstFile('#doc/sphinx/matlab/code-docs/%s.rst' % fname,
-                          '#doc/sphinx/matlab/code-docs/matlab_template.rst.in')
+                          '#doc/sphinx/matlab/code-docs/matlab-template.rst.in')
         build(c)
         localenv.Depends(sphinxdocs, c)
-    
+
     # Matlab examples: create individual documentation pages with the source
     # for each example
     for f in mglob(env, '#samples/matlab', 'm'):

@@ -1,3 +1,10 @@
-function v = cp_mole(a)
-% CP_MOLE - Molar heat capacity at constant pressure [J/kmol-K].
-v = thermo_get(a.tp_id,6);
+function v = cp_mole(tp)
+% :param tp:
+%     Instance of class :mat:func:`ThermoPhase` (or another
+%     object that derives from ThermoPhase)
+% :return:
+%     Vector of specific heats of the species at
+%     constant pressure. Units: J/kmol-K
+%
+
+v = thermo_get(tp.tp_id,6);

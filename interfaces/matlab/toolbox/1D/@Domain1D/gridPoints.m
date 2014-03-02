@@ -1,5 +1,12 @@
 function zz = gridPoints(d, n)
-% GRID -
+% Get ``n`` grid points from the domain.
+%
+% :param d:
+%     Instance of class :mat:func:`Domain1D`
+% :param n:
+%     Optional, vector of grid points to be retrieved.
+% :return:
+%     Vector of grid points. Length of ``n`` or :mat:func:`nPoints`.
 %
 if nargin == 1
     zz = zeros(1, nPoints(d));

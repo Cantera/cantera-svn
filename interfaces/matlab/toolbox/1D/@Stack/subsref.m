@@ -1,5 +1,10 @@
 function b = subsref(s,index)
-% SUBSREF -
+% :param s:
+%     Instance of class :mat:func:`Stack`
+% :param index:
+% :return:
+%
+
 switch index.type
     case '()'
         b = s.domains(index.subs{:});

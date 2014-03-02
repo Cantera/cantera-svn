@@ -1,5 +1,12 @@
 function setState_HP(tp,hp)
+% Set the specific enthalpy [J/kg] and pressure [Pa].
 %
+% :param tp:
+%     Instance of class :mat:func:`ThermoPhase` (or another
+%     class derived from ThermoPhase)
+% :param hp:
+%     Vector of length 2 containing the desired values for the specific
+%     enthalpy (J/kg) and pressure (Pa).
 %
 
 if hp(2) <= 0.0

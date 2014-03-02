@@ -1,8 +1,8 @@
 function x = molecularWeights(a)
-% MOLECULARWEIGHTS - Array of species molar masses [kg/kmol].
+% Deprecated in favor of :mat:func:`molarMasses`
 %
-%   This method is deprecated - use molarMasses instead.
+% See also: mat:func:`molarMasses`
 %
-%   See also: molarMasses
-%
+
+warning('Deprecated in favor of molarMasses.m')
 x = molarMasses(a);

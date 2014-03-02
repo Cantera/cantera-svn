@@ -1,6 +1,14 @@
 function t = ThermoPhase(r)
-%THERMOPHASE Cantera ThermoPhase class constructor
+% Cantera ThermoPhase class constructor
 %
+% :param r:
+%     If ``r`` is an instance of class :mat:func:`ThermoPhase`,
+%     a copy of the instance is returned. Otherwise, ``r`` must
+%     be an instance of class :mat:func:`XML_Node`.
+% :return:
+%     Instance of class :mat:func:`ThermoPhase`
+%
+
 if nargin == 1
     if isa(r,'ThermoPhase')
         % create a copy

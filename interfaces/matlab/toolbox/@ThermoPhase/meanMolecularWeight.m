@@ -1,9 +1,8 @@
-function wtm = meanMolecularWeight(p)
-% MEANMOLECULARWEIGHT - Mean molecular weight.
+function wtm = meanMolecularWeight(tp)
+% Deprecated in favor of :mat:func:`meanMolarMass`
 %
-%    This method is a synonym for method meanMolarMass and is
-%    provided for backward compatibility.
+% See also: :mat:func:`meanMolarMass`
 %
-%    See also; meanMolarMass
-%
-wtm = meanMolarMass(p);
+
+warning('Deprecated in favor of meanMolarMass.m')
+wtm = meanMolarMass(tp);
