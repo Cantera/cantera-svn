@@ -1,4 +1,4 @@
-function s = Solution(src, id)
+function s = Solution(src, id, trans)
 % Class :mat:func:`Solution` constructor.
 %
 % Class Solution represents solutions of multiple species. A
@@ -10,17 +10,19 @@ function s = Solution(src, id)
 % of each species, which may be given as mole fractions or mass
 % fractions. ::
 %
-%     >> s = Solution('input.xml'[, phase_name])
+%     >> s = Solution('input.xml'[, phase_name[, transport_model]])
 %
 % constructs a Solution object from a specification contained in
 % file ``input.xml``. Optionally, the name of the phase to be imported
 % can be specified with ``phase_name``. If a
 % Transport model is included in ``input.xml``, it will be included
 % in the Solution instance with the default transport modeling as set
-% in the input file. The transport modeling cannot be changed once the
-% phase is loaded. To have different transport modeling, change the
-% ``transport`` node in the CTML file, or ``transport`` property in
-% the CTI file before loading the phase.
+% in the input file. To specify the transport modeling, set the input
+% argument ``trans`` to one of ``'default'``, ``'Mix'``, or ``'Multi'``.
+% In this case, the phase name must be specified as well. Alternatively,
+% change the ``transport`` node in the CTML file, or ``transport``
+% property inthe CTI file before loading the phase. The transport 
+% modeling cannot be changed once the phase is loaded. 
 %
 % Class :mat:func:`Solution` derives from three more basic classes, and most of
 % its methods are inherited from these classes. These are:
@@ -34,7 +36,11 @@ function s = Solution(src, id)
 % :param src:
 %     Input string of CTI or CTML file name.
 % :param id:
-%     Optional, name of the phase to import.
+%     Optional unless ``trans`` is specified. ID of the phase to 
+%     import as specified in the CTML or CTI file.
+% :param trans:
+%     String, transport modeling. Possible values are ``'default'``,
+%     ``'Mix'``, or ``'Multi'``. If not specified, ``'default'`` is used.
 % :return:
 %     Instance of class :mat:func:`Solution`
 %
@@ -49,6 +55,14 @@ t = ThermoPhase(node);
 k = Kinetics(node,t);
 s.kin = k;
 s.th = t;
-tr = Transport(node,t,'default',4);
+if nargin == 3
+    if strcmp(trans,'default') || strcmp(trans,'Mix') || strcmp(trans,'Multi')
+        tr = Transport(node,t,trans,4);
+    else
+        error('Unknown transport modeling specified.')
+    end
+else
+    tr = Transport(node,t,'default',4);
+end
 s.tr = tr;
 s = class(s,'Solution',t,k,tr);
