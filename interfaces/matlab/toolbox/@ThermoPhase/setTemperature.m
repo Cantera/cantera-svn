@@ -1,7 +1,6 @@
-function a = setTemperature(a,t)
-% SETTEMPERATURE  Set the temperature [K].
+function setTemperature(tp,t)
 %
 if (t <= 0)
     error('the temperature must be positive');
 end
-phase_set(a.tp_id,1,t);
+phase_set(tp.tp_id,1,t);

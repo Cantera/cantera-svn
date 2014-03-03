@@ -1,4 +1,4 @@
-function a = setElectricPotential(a,phi)
-% SETELECTRICPOTENTIAL  Set the electric potential [V].
+function setElectricPotential(tp,phi)
 %
-thermo_set(a.tp_id,2,phi);
+
+thermo_set(tp.tp_id,2,phi);

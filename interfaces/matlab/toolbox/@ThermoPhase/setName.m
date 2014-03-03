@@ -1,8 +1,8 @@
-function setName(self, name)
-% SETNAME - Set the name of the phase.
+function setName(tp, name)
 %
+
 if isa(name,'char')
-    phase_set(thermo_hndl(self), 32, name);
+    phase_set(thermo_hndl(tp), 32, name);
 else
     error('name must be a string.');
 end

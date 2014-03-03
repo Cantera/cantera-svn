@@ -1,5 +1,10 @@
 function a = setState(a,job,values)
-disp('deprecated')
+% Deprecated in favor of :mat:func:`set`
+%
+% See also: :mat:func:`set`
+%
+
+warning('deprecated in favor of set.m')
 if nargin ~= 3 || ~isa(job,'char')
     error('Syntax error. Type "help setState" for more information.')
 end
