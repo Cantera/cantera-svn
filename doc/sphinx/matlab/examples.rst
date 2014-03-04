@@ -1,7 +1,5 @@
 .. _sec-matlab-examples:
 
-.. py:currentmodule:: cantera
-
 Index of Examples
 =================
 
@@ -12,7 +10,7 @@ Tutorials
 .. toctree::
    :glob:
 
-   examples/tut*
+   tutorials/*
 
 Examples
 --------
@@ -20,4 +18,4 @@ Examples
 .. toctree::
    :glob:
 
-   examples/[!tut]*
+   examples/*

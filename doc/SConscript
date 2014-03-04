@@ -192,8 +192,12 @@ if localenv['sphinx_docs']:
         tmpenv = env.Clone()
         tmpenv['script_name'] = f.name
         tmpenv['script_path'] = '../../../../samples/matlab/%s' % f.name
-        b = tmpenv.SubstFile('#doc/sphinx/matlab/examples/%s.rst' % f.name[:-2],
-                             '#doc/sphinx/matlab/examples/example-script.rst.in')
+        if f.name.startswith('tut'):
+            b = tmpenv.SubstFile('#doc/sphinx/matlab/tutorials/%s.rst' % f.name[:-2],
+                                 '#doc/sphinx/matlab/tutorials/tutorial-script.rst.in')
+        else:
+            b = tmpenv.SubstFile('#doc/sphinx/matlab/examples/%s.rst' % f.name[:-2],
+                                 '#doc/sphinx/matlab/examples/example-script.rst.in')
         build(b)
         localenv.Depends(sphinxdocs, b)
 
