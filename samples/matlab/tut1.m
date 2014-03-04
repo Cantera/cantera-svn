@@ -92,7 +92,7 @@ gas1 = GRI30
 % http://www.me.berkeley.edu/gri_mech/ for more information about
 % GRI-Mech 3.0.)
 %
-% The object created by GI30 has properties you would expect for a gas
+% The object created by GRI30 has properties you would expect for a gas
 % mixture - it has a temperature, a pressure, species mole and mass
 % fractions, etc. As we'll soon see, it has many other properties too.
 %
