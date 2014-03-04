@@ -1,6 +1,6 @@
 function setValue(s, n, comp, localPoint, v)
-% Set the value of a single entry in the solution vector.
-%
+% SETVALUE  Set the value of a single entry in the solution vector.
+% setValue(s, n, comp, localPoint, v)
 % Example (assuming ``s`` is an instance of :mat:func:`Stack`)::
 %
 %     setValue(s, 3, 5, 1, 5.6)

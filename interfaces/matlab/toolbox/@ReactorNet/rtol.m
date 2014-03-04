@@ -1,6 +1,6 @@
 function t = rtol(r)
-% Get the relative error tolerance.
-%
+% RTOL  Get the relative error tolerance.
+% t = rtol(r)
 % :param r:
 %     Instance of class :mat:func:`ReactorNet`
 % :return:

@@ -1,4 +1,6 @@
 function a = isSurface(d)
+% ISSURFACE  Determine if a domain is a surface.
+% a = isSurface(d)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :return:

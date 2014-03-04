@@ -1,6 +1,6 @@
 function setMassFlowRate(r, mdot)
-% Set the mass flow rate.
-%
+% SETMASSFLOWRATE  Set the mass flow rate.
+% setMassFlowRate(r, mdot)
 % :param r:
 %     Instance of class :mat:func:`Reactor`
 % :param mdot:

@@ -1,6 +1,6 @@
 function advance(n, tout)
-% Advance the state of the reactor network in time.
-%
+% ADVANCE  Advance the state of the reactor network in time.
+% advance(n, tout)
 % Method :mat:func:`advance` integrates the system of ordinary differential
 % equations that determine the rate of change of the volume, the
 % mass of each species, and the total energy for each reactor. The

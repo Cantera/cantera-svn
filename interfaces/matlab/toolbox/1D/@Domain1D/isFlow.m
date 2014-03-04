@@ -1,4 +1,6 @@
 function a = isFlow(d)
+% ISFLOW  Determine whether a domain is a flow.
+% a = isFlow(d)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :return:

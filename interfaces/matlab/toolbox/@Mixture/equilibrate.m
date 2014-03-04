@@ -1,6 +1,6 @@
 function r = equilibrate(self, XY, err, maxsteps, maxiter, loglevel)
-% Set the mixture to a state of chemical equilibrium.
-%
+% EQUILIBRATE  Set the mixture to a state of chemical equilibrium.
+% r = equilibrate(self, XY, err, maxsteps, maxiter, loglevel)
 % This method uses a version of the VCS algorithm to find the
 % composition that minimizes the total Gibbs free energy of the
 % mixture, subject to element conservation constraints. For a

@@ -1,6 +1,6 @@
 function x = XML_Node(name, src, wrap)
-% XML_Node class constructor
-%
+% XML_NODE  XML_Node class constructor
+% x = XML_Node(name, src, wrap)
 % :param name:
 %     String name of the XML_Node that should be created.
 % :param src:

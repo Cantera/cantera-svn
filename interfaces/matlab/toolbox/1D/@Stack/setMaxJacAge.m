@@ -1,7 +1,6 @@
 function setMaxJacAge(s, ss_age, ts_age)
-% Set the number of times the Jacobian will be used
-% before it is recomputed.
-%
+% SETMAXJACAGE  Set the number of times the Jacobian will be used before it is recomputed.
+% setMaxJacAge(s, ss_age, ts_age)
 % :param s:
 %     Instance of class :mat:func:`Stack`
 % :param ss_age:

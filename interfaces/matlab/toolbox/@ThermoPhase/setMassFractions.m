@@ -1,6 +1,6 @@
 function setMassFractions(tp, y, norm)
-% Set the species mass fractions.
-%
+% SETMASSFRACTIONS  Set the species mass fractions.
+% setMassFractions(tp, y, norm)
 % Note that calling :mat:func:`setMassFractions` leaves the temperature and
 % density unchanged, and therefore the pressure changes if the new
 % composition has a molar mass that is different than the old

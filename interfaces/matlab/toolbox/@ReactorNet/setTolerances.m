@@ -1,6 +1,6 @@
 function setTolerances(r, rtol, atol)
-% Set error tolerances for the solution.
-%
+% SETTOLERANCES  Set the error tolerances.
+% setTolerances(r, rtol, atol)
 % :param rtol:
 %     Scalar relative error tolerance
 % :param atol:

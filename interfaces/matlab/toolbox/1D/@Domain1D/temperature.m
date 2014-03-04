@@ -1,6 +1,6 @@
 function t = temperature(d)
-% Get the boundary temperature [K].
-%
+% TEMPERATURE  Get the boundary temperature.
+% t = temperature(d)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :return:

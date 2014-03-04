@@ -1,6 +1,6 @@
 function k = speciesIndex(tp,name)
-% The species index of species with name 'name'.
-%
+% SPECIESINDEX  Get the index of a species given the name.
+% k = speciesIndex(tp,name)
 % The index is an integer assigned to each species in sequence as it
 % is read in from the input file.
 %

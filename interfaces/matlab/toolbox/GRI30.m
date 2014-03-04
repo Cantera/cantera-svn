@@ -1,4 +1,6 @@
 function s = GRI30(tr)
+% GRI30  Create an object with the GRI-Mech 3.0 reaction mechanism.
+% s = GRI30(tr)
 % Create a Solution instance representing
 % reaction mechanism GRI-Mech 3.0.
 %
@@ -28,15 +30,15 @@ function s = GRI30(tr)
 %
 
 if nargin == 0
-    s = Solution('gri30.cti','gri30');
+    s = Solution('gri30.cti', 'gri30');
 elseif nargin == 1
-    if strcmp(tr,'Mix')
-        s = Solution('gri30.cti','gri30_mix');
-    elseif strcmp(tr,'Multi')
-        s = Solution('gri30.cti','gri30_multi');
+    if strcmp(tr, 'Mix')
+        s = Solution('gri30.cti', 'gri30_mix');
+    elseif strcmp(tr, 'Multi')
+        s = Solution('gri30.cti', 'gri30_multi');
     else
         error('Unknown transport specified. "Mix" or "Multi" are supported.')
     end
 else
-    error('wrong number of arguments');
+    error('Wrong number of arguments.');
 end

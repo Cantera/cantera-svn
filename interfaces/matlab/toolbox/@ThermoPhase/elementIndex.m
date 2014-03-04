@@ -1,6 +1,6 @@
 function k = elementIndex(tp,name)
-% The element index of the element with name ``'name'``.
-%
+% ELEMENTINDEX  Get the index of an element given its name.
+% k = elementIndex(tp,name)
 % The index is an integer assigned to each element in sequence as it
 % is read in from the input file.
 %

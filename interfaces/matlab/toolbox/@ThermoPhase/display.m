@@ -1,7 +1,6 @@
 function display(tp)
-% Overload of the built-in display function to display the
-% state of the ThermoPhase instance on the screen.
-%
+% DISPLAY  Display the phase on the terminal.
+% display(tp)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     object that derives from ThermoPhase)

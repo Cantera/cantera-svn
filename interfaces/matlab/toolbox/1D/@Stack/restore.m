@@ -1,6 +1,7 @@
 function restore(s, fname, id)
-% Restore a previously-saved solution. This method can be used
-% to provide an initial guess for the solution.
+% RESTORE  Restore a previously-saved solution.
+% restore(s, fname, id)
+% This method can be used to provide an initial guess for the solution.
 %
 % See also: :mat:func:`save`
 %

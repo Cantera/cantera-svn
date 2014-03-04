@@ -1,6 +1,6 @@
 function k = Kinetics(r, ph, neighbor1, neighbor2, neighbor3, neighbor4)
-% Kinetics class constructor.
-%
+% KINETICS  Kinetics class constructor.
+% k = Kinetics(r, ph, neighbor1, neighbor2, neighbor3, neighbor4)
 % Class Kinetics represents kinetics managers, which are classes
 % that manage reaction mechanisms.  The reaction mechanism
 % attributes are specified in a CTML file.
@@ -10,7 +10,7 @@ function k = Kinetics(r, ph, neighbor1, neighbor2, neighbor3, neighbor4)
 %
 % :param r:
 %     If ``r`` is an instance of class :mat:func:`Kinetics`, a copy of the instance
-%     is returned. In this case, ``r`` should be the only argument. Otherwise, ``r`` 
+%     is returned. In this case, ``r`` should be the only argument. Otherwise, ``r``
 %     must be an instance of class :mat:func:`XML_Node`.
 % :param ph:
 %     If ``r`` is an instance of :mat:func:`XML_Node`, ``ph`` is an instance of class

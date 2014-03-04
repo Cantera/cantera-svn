@@ -1,4 +1,6 @@
 function x = Wall(left, right, area, k, u, q, v, kleft, kright)
+% WALL  Wall class constructor.
+% x = Wall(left, right, area, k, u, q, v, kleft, kright)
 % A Wall separates two reactors, or a reactor and a reservoir. A wall has a
 % finite area, may conduct heat between the two reactors on either
 % side, and may move like a piston.
@@ -31,11 +33,11 @@ function x = Wall(left, right, area, k, u, q, v, kleft, kright)
 % faces. The surface temperature on each side is taken to be equal to the
 % temperature of the reactor it faces.
 %
-% Note: all of the arguments are optional and can be activated by using the
-% various methods of the :mat:func:`Wall` class. Any improperly specified
-% arguments will generate warnings; these can be ignored if the intention
-% was to not use a particular argument. Thus, the velocity of the wall can
-% be set by using empty strings or 0.0 for each of the arguments before
+% Note: all of the arguments are optional and can be activated after initial
+% construction by using the various methods of the :mat:func:`Wall` class.
+% Any improperly specified arguments will generate warnings; these can be ignored
+% if the intention was to not use a particular argument. Thus, the velocity of
+% the wall can be set by using empty strings or 0.0 for each of the arguments before
 % the velocity with no harm.
 %
 % :param left:

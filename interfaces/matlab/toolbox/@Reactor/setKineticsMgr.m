@@ -1,5 +1,6 @@
 function setKineticsMgr(r, k)
-% Set the kinetics manager for an instance of :mat:func:`Reactor`.
+% SETKINETICSMGR  Set the kinetics manager.
+% setKineticsMgr(r, k)
 % This method is used internally during Reactor initialization, but
 % is usually not called by users.
 %

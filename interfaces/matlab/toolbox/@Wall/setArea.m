@@ -1,6 +1,6 @@
 function setArea(w, a)
-% Set the area of the wall.
-%
+% SETAREA  Set the area of a wall.
+% setArea(w, a)
 % :param w:
 %     Instance of class :mat:func:`Wall`
 % :param a:

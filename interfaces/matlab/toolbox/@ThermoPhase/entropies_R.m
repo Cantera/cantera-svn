@@ -1,4 +1,6 @@
 function s = entropies_R(tp)
+% ENTROPIES_R  Get the non-dimensional entropy.
+% s = entropies_R(tp)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     object that derives from ThermoPhase)

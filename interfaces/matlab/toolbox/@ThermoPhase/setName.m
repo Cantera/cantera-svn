@@ -1,6 +1,6 @@
 function setName(tp, name)
-% Set the name of the phase.
-%
+% SETNAME  Set the name of the phase.
+% setName(tp, name)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     class derived from ThermoPhase)

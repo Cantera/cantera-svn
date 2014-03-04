@@ -1,5 +1,6 @@
 function e = geterr
-% Get the error message from a Cantera error
+% GETERR  Get the error message from a Cantera error.
+% e = geterr
 %
 
 try

@@ -1,6 +1,6 @@
 function x = findByName(root, name)
-% Find an XML element by name
-%
+% FINDBYNAME  Get an XML element given its name.
+% x = findByName(root, name)
 % :param root:
 %     Instance of class :mat:func:`XML_Node`
 % :param name:

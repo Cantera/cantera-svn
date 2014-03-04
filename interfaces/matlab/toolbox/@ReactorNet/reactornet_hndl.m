@@ -1,11 +1,11 @@
 function i = reactornet_hndl(r)
-% Integer used to access kernel object
-%
+% REACTORNET_HNDL  Get the integer used to access the kernel object.
+% i = reactornet_hndl(r)
 % :param r:
 %     Instance of class :mat:func:`ReactorNet`
 %     for which the handle is desired.
 % :return:
-%     Returns the integer ID of the kinetics kernel object.
+%     Integer used to access the kernel object.
 %
 
 i = r.index;

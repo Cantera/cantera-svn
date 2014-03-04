@@ -1,6 +1,6 @@
 function setState_Tsat(tp,tx)
-% Set the fluid to a saturated state at temperature tx
-%
+% SETSTATE_TSAT  Set the fluid to a saturated state at a given temperature.
+% setState_Tsat(tp,tx)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     class derived from ThermoPhase)

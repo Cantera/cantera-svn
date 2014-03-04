@@ -1,4 +1,6 @@
 function setDensity(tp,rho)
+% SETDENSITY  Set the density.
+% setDensity(tp,rho)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     class derived from ThermoPhase)

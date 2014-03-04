@@ -1,6 +1,6 @@
 function d = setCoverageEqs(d,onoff)
-% Enable or disable solving the coverage equations.
-%
+% SETCOVERAGEEQS  Enable or disable solving the coverage equations.
+% d = setCoverageEqs(d,onoff)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :param onoff:

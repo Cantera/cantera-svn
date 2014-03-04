@@ -1,6 +1,6 @@
 function setMassFlowRate(f, mdot)
-% Set the mass flow rate through a mass flow controller to a constant
-% value
+% SETMASSFLOWRATE  Set the mass flow rate to a constant value.
+% setMassFlowRate(f, mdot)
 %
 % See also: :mat:func:`MassFlowController`
 %

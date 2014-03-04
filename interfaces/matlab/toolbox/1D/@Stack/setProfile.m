@@ -1,6 +1,6 @@
 function setProfile(s, name, comp, p)
-% Specify a profile for one component.
-%
+% SETPROFILE  Specify a profile for one component.
+% setProfile(s, name, comp, p)
 % The solution vector values for this component will be linearly
 % interpolated from the discrete function defined by p(:,1) vs. p(:,2).
 % Note that ``p(1,1) = 0.0`` corresponds to the leftmost grid point in

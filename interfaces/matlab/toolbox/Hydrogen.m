@@ -1,6 +1,6 @@
 function h = Hydrogen()
-% Return an object representing hydrogen.
-%
+% HYDROGEN  Return an object representing hydrogen.
+% h = Hydrogen()
 % The object returned by this method implements an accurate equation of
 % state for hydrogen that can be used in the liquid, vapor, saturated
 % liquid/vapor, and supercritical regions of the phase diagram. The
@@ -17,4 +17,4 @@ function h = Hydrogen()
 %     Instance of class :mat:func:`Solution`
 %
 
-h = Solution('liquidvapor.cti','hydrogen');
+h = Solution('liquidvapor.cti', 'hydrogen');

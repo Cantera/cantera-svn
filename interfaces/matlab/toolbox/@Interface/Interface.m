@@ -1,5 +1,6 @@
 function s = Interface(src, id, p1, p2, p3, p4)
-% Class Interface constructor representing a surface or edge phase.
+% INTERFACE  Interface class constructor.
+% s = Interface(src, id, p1, p2, p3, p4)
 % See :ref:`sec-interfaces`.
 %
 % See also: :mat:func:`importEdge`, :mat:func:`importInterface`

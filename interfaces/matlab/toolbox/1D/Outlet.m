@@ -1,4 +1,6 @@
 function m = Outlet(id)
+% OUTLET  Create an outlet domain.
+% m = Outlet(id)
 % :param id:
 %     String ID of the outlet.
 % :return:

@@ -1,6 +1,7 @@
 function s = importEdge(file, name, phase1, phase2, phase3, phase4)
-% Create interfaces between phases. Supports up to four neighbor
-% phases. See :ref:`sec-interfaces`
+% IMPORTEDGE  Import edges between phases.
+% s = importEdge(file, name, phase1, phase2, phase3, phase4)
+% Supports up to four neighbor phases. See :ref:`sec-interfaces`
 %
 % :param file:
 %     File containing phases
@@ -27,5 +28,5 @@ elseif nargin == 5
 elseif nargin == 6
     s = Interface(file, name, phase1, phase2, phase3, phase4);
 else
-    error('importEdge only supports 4 neighbor phases');
+    error('importEdge only supports 4 neighbor phases.');
 end

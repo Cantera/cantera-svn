@@ -1,6 +1,7 @@
 function x = Func(typ, n, p)
+% FUNC  Func class constructor.
+% x = Func(typ, n, p)
 % A class for functors.
-%
 % A functor is an object that behaves like a function. Cantera
 % defines a set of functors to use to create arbitrary functions to
 % specify things like heat fluxes, piston speeds, etc., in reactor

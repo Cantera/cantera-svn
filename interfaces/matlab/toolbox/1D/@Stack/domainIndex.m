@@ -1,6 +1,6 @@
 function n = domainIndex(s, name)
-% Get the index of a domain in a stack
-%
+% DOMAININDEX  Get the index of a domain in a stack given its name.
+% n = domainIndex(s, name)
 % :param s:
 %     Instance of class :mat:func:`Stack`
 % :param name:

@@ -1,6 +1,6 @@
 function m = AxisymmetricFlow(gas, id)
-% Axisymmetric flow.
-%
+% AXISYMMETRICFLOW  Create an axisymmetric flow domain.
+% m = AxisymmetricFlow(gas, id)
 % :param gas:
 %     Instance of class :mat:func:`Solution`
 % :param id:

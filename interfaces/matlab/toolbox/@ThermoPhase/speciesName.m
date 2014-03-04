@@ -1,4 +1,6 @@
 function nm = speciesName(tp, k)
+% SPECIESNAME  Get the name of a species given the index.
+% nm = speciesName(tp, k)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     class derived from ThermoPhase)

@@ -1,10 +1,12 @@
 function moles = phaseMoles(self, n)
+% PHASEMOLES  Get the number of moles of a phase in a mixture.
+% moles = phaseMoles(self, n)
 % :param self:
 %     Instance of class :mat:func:`Mixture`
 % :param n:
 %     Integer phase number in the input
 % :return:
-%     Moles of phase number ``n`` (kmol).
+%     Moles of phase number ``n``. Units: kmol
 %
 
 if nargin == 2

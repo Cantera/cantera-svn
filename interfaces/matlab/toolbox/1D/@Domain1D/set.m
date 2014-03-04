@@ -1,6 +1,6 @@
 function a = set(a,varargin)
-% Set properties.
-%
+% SET  Set properties of a Domain1D.
+% a = set(a,varargin)
 % The properties that may be set are
 %
 % * Temperature     (T)

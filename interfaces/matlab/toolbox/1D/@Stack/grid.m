@@ -1,6 +1,6 @@
 function z = grid(s, name)
-% The grid in one domain.
-%
+% GRID  Get the grid in one domain.
+% z = grid(s, name)
 % :param s:
 %     Instance of class :mat:func:`Stack`
 % :param name:

@@ -1,6 +1,6 @@
 function setState_satLiquid(tp)
-% Set the fluid to the saturated liquid state at the current temperature.
-%
+% SETSTATE_SATLIQUID  Set the fluid to the saturated liquid state at the current temperature.
+% setState_satLiquid(tp)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     class derived from ThermoPhase)

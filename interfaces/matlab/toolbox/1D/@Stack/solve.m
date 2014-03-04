@@ -1,6 +1,6 @@
 function solve(s, loglevel, refine_grid)
-% Solve the problem.
-%
+% SOLVE  Solve the problem.
+% solve(s, loglevel, refine_grid)
 % :param s:
 %     Instance of class :mat:func:`Stack`
 % :param loglevel:

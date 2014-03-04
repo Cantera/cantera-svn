@@ -1,9 +1,9 @@
 function setMoleFractions(tp,x,norm)
-% Set the species mole fractions.
-%
-% Note that calling :mat:func:`setmoleFractions` leaves the temperature and
+% SETMOLEFRACTIONS  Set the species mole fractions.
+% setMoleFractions(tp,x,norm)
+% Note that calling :mat:func:`setMoleFractions` leaves the temperature and
 % density unchanged, and therefore the pressure changes if the new
-% composition has a molar mole that is different than the old
+% composition has a molar mass that is different than the old
 % composition. If it is desired to change the composition and hold
 % the pressure fixed, use method :mat:func:`set` and specify the mole
 % fractions and the pressure, or call :mat:func:`setPressure`

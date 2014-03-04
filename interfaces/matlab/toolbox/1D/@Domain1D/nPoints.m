@@ -1,6 +1,6 @@
 function npts = nPoints(d)
-% Number of grid points.
-%
+% NPOINTS  Get the number of grid points.
+% npts = nPoints(d)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :return:

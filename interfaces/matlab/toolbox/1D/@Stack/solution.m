@@ -1,6 +1,6 @@
 function x = solution(s, domain, component)
-% Get a solution component in one domain.
-%
+% SOLUTION  Get a solution component in one domain.
+% x = solution(s, domain, component)
 % :param s:
 %     Instance of class :mat:func:`Stack`
 % :param domain:

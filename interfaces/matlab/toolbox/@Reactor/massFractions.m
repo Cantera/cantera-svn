@@ -1,6 +1,6 @@
 function y = massFractions(r)
-% Mass fractions of reactor contents.
-%
+% MASSFRACTIONS  Get the mass fractions of the species.
+% y = massFractions(r)
 % :param r:
 %     Instance of class :mat:func:`Reactor`
 % :return:

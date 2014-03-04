@@ -1,4 +1,6 @@
 function n = nAtoms(tp,k,m)
+% NATOMS  Get the number of atoms of an element in a species.
+% n = nAtoms(tp,k,m)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     object that derives from ThermoPhase)

@@ -1,10 +1,13 @@
 function kr = revRateConstants(a)
-% Reverse reaction rate constants for all the reactions.
+% REVRATECONSTANTS  Get the reverse reaction rate constants.
+% kr = revRateConstants(a)
+%
+% See also: :mat:func:`fwdRateConstants`, :mat:func:`equil_KC`
 %
 % :param a:
 %     Instance of class :mat:func:`Kinetics` (or another
-%     object containing an instance of that class)
-%     for which forward rate constants are desired.
+%     object deriving from Kinetics)
+%     for which reverse rate constants are desired.
 % :return:
 %     Returns a column vector of the reverse rate constants of
 %     all of the reactions.

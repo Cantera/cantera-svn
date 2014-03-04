@@ -1,8 +1,7 @@
 function poly = polynom(coeffs)
-% Create an instance of class :mat:func:`Func` representing a 
-% polynomial.
-%
-% The polynomial coefficients are specified by a vector 
+% POLYNOM  Create a polynomial :mat:func:`Func` instance.
+% poly = polynom(coeffs)
+% The polynomial coefficients are specified by a vector
 % ``[a0 a1 .... aN]``. Examples:
 %
 % .. code-block:: matlab

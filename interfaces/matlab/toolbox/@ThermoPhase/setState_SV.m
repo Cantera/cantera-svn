@@ -1,6 +1,6 @@
 function setState_SV(tp,sv)
-% Set the specific entropy [J/kg-K] and specific volume [m**3/kg].
-%
+% SETSTATE_SV  Set the specific entropy and specific volume.
+% setState_SV(tp,sv)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     class derived from ThermoPhase)

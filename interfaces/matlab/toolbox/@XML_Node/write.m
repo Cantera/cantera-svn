@@ -1,6 +1,6 @@
 function write(x, file)
-% Write XML_Node to file
-%
+% WRITE  Write XML_Node to file.
+% write(x, file)
 % :param x:
 %     Instance of class :mat:func:`XML_Node`
 % :param file:

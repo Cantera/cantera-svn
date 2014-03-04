@@ -1,6 +1,6 @@
 function display(s, fname)
-% Show all domains.
-%
+% DISPLAY  Show all domains.
+% display(s, fname)
 % :param s:
 %     Instance of class :mat:func:`Stack`
 % :param fname:

@@ -1,6 +1,6 @@
 function t = ThermoPhase(r)
-% Cantera ThermoPhase class constructor
-%
+% THERMOPHASE  ThermoPhase class constructor.
+% t = ThermoPhase(r)
 % :param r:
 %     If ``r`` is an instance of class :mat:func:`ThermoPhase`,
 %     a copy of the instance is returned. Otherwise, ``r`` must

@@ -1,6 +1,6 @@
 function m = AxiStagnFlow(gas)
-% Axisymmetric stagnation flow.
-%
+% AXISTAGNFLOW  Get an axisymmetric stagnation flow domain.
+% m = AxiStagnFlow(gas)
 % :param gas:
 %     Instance of class :mat:func:`Solution`
 % :return:

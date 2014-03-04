@@ -1,6 +1,6 @@
 function a = attrib(x, key)
-% Get the XML_Node attribute with key ``key``
-%
+% ATTRIB  Get the XML_Node attribute with a given key.
+% a = attrib(x, key)
 % :param x:
 %     Instance of class :mat:func:`XML_Node`
 % :param key:

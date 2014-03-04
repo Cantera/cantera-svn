@@ -1,6 +1,6 @@
 function nm = elementName(tp, m)
-% Name of element with index ``m``.
-%
+% ELEMENTNAME  Get the name of an element given its index.
+% nm = elementName(tp, m)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     object that derives from ThermoPhase)

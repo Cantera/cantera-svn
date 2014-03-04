@@ -1,6 +1,6 @@
 function d = Domain1D(a, b, c)
-% Create a new one-dimensional domain.
-%
+% DOMAIN1D  Domain1D class constructor.
+% d = Domain1D(a, b, c)
 % :param a:
 %     Integer type of domain. Possible values are
 %

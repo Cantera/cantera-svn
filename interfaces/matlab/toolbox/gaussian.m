@@ -1,6 +1,6 @@
 function g = gaussian(peak, center, width)
-% Create a Gaussian :mat:func:`Func` instance
-%
+% GAUSSIAN  Create a Gaussian :mat:func:`Func` instance.
+% g = gaussian(peak, center, width)
 % :param peak:
 %     The peak value
 % :param center:

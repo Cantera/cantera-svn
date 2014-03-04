@@ -1,6 +1,6 @@
 function r = Reservoir(contents)
-% Create a Reservoir object.
-%
+% RESERVOIR  Create a Reservoir object.
+% r = Reservoir(contents)
 % A :mat:func:`Reservoir` is an instance of class :mat:func:`Reactor`
 % configured so that its intensive state is constant in time. A
 % reservoir may be thought of as infinite in extent, perfectly mixed,

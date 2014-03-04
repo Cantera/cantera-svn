@@ -1,4 +1,6 @@
 function v = electricPotential(tp)
+% ELECTRICPOTENTIAL  Get the electric potential.
+% v = electricPotential(tp)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     object that derives from ThermoPhase)

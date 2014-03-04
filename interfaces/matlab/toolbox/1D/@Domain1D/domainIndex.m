@@ -1,6 +1,6 @@
 function i = domainIndex(d)
-% Domain index.
-%
+% DOMAININDEX  Get the domain index.
+% i = domainIndex(d)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :return:

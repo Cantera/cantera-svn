@@ -1,6 +1,6 @@
 function setMaxTimeStep(r, maxstep)
-% Set the maximum time step.
-%
+% SETMAXTIMESTEP  Set the maximum time step.
+% setMaxTimeStep(r, maxstep)
 % The integrator chooses a step size based on the desired error
 % tolerances and the rate at which the solution is changing. In
 % some cases, the solution changes very slowly at first, then very

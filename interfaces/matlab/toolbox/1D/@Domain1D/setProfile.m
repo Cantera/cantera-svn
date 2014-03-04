@@ -1,6 +1,8 @@
 function d = setProfile(d, n, p)
+% SETPROFILE  Set the profile of a component.
+% d = setProfile(d, n, p)
 % Convenience function to allow an instance of :mat:func:`Domain1D` to
-% have a profile of its components set.
+% have a profile of its components set when it is part of a :mat:func:`Stack`.
 %
 % :param d:
 %     Instance of class :mat:func:`Domain1D`

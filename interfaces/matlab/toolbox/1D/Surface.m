@@ -1,4 +1,6 @@
 function m = Surface(id, surface_mech)
+% SURFACE  Create a surface domain.
+% m = Surface(id, surface_mech)
 % :param id:
 %     String ID of surface
 % :param surface_mech:

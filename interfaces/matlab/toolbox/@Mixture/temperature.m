@@ -1,4 +1,6 @@
 function t = temperature(self)
+% TEMPERATURE  Get the temperature of a mixture.
+% t = temperature(self)
 % :param self:
 %     Instance of class :mat:func:`Mixture`
 % :return:

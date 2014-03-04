@@ -1,6 +1,6 @@
 function tr = Transport(r, th, model, loglevel)
-% Constructor for class :mat:func:`Transport`.
-%
+% TRANSPORT  Transport class constructor.
+% tr = Transport(r, th, model, loglevel)
 % Create a new instance of class :mat:func:`Transport`. One, three,
 % or four arguments may be supplied. If one argument is given,
 % it must be an instance of class :mat:func:`Transport`, and

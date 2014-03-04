@@ -1,10 +1,9 @@
 function m = Mixture(phases)
-%
-% Class constructor for multiphase mixtures.
-%
-% Class Mixture represents
-% mixtures of one or more phases of matter.  To construct a mixture,
-% supply a cell array of phases and mole numbers::
+% MIXTURE  Multiphase mixture class constructor.
+% m = Mixture(phases)
+% Class Mixture represents mixtures of one or more phases of matter.
+% To construct a mixture, supply a cell array of phases and
+% mole numbers::
 %
 %     >> gas = importPhase('gas.cti');
 %     >> graphite = importPhase('graphite.cti');
@@ -16,7 +15,7 @@ function m = Mixture(phases)
 %     >> addPhase(mix, water, 3.0);
 %
 % Note that the objects representing each phase compute only the
-% intensive state of the phase -- they do not store any information
+% intensive state of the phase - they do not store any information
 % on the amount of this phase. Mixture objects, on the other hand,
 % represent the full extensive state.
 %
@@ -47,7 +46,7 @@ m = class(m,'Mixture');
 % if phases are supplied, add them
 if nargin == 1
     if ~isa(phases,'cell')
-        error('enter phases as a cell array');
+        error('Enter phases as a cell array.');
     end
 
     % first column contains the phase objects, and the second column

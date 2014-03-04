@@ -1,7 +1,7 @@
 function r = FlowReactor(contents)
-% Create a FlowReactor object.
-%
-% A reactor representing adiabatic plug flow in a constant-area 
+% FLOWREACTOR  Create a flow reactor object.
+% r = FlowReactor(contents)
+% A reactor representing adiabatic plug flow in a constant-area
 % duct. Examples:
 %
 % .. code-block:: matlab

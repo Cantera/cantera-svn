@@ -1,6 +1,6 @@
 function m = Methane()
-% Return an object representing methane.
-%
+% METHANE  Return an object representing methane.
+% m = Methane()
 % The object returned by this method implements an accurate equation of
 % state for methane that can be used in the liquid, vapor, saturated
 % liquid/vapor, and supercritical regions of the phase diagram.  The
@@ -14,4 +14,4 @@ function m = Methane()
 %     Instance of class :mat:func:`Solution`
 %
 
-m = Solution('liquidvapor.cti','methane');
+m = Solution('liquidvapor.cti', 'methane');

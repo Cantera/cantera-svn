@@ -1,4 +1,6 @@
 function n = speciesIndex(self, k, p)
+% SPECIESINDEX  Get the index of a species in a mixture.
+% n = speciesIndex(self, k, p)
 % :param self:
 %     Instance of class :mat:func:`Mixture`
 % :param name:

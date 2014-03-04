@@ -1,6 +1,6 @@
-function dydt = conhp(t,y,gas,mw) %#ok<INUSL>
-% ODE system for a constant-pressure, adiabatic reactor.
-%
+function dydt = conhp(t, y, gas, mw)
+% CONHP  Set up ODE system for constant-pressure, adiabatic reactor.
+% dydt = conhp(t, y, gas, mw)
 % Function :mat:func:`conhp` evaluates the system of ordinary
 % differential equations for an adiabatic, constant-pressure,
 % zero-dimensional reactor. It assumes that the 'gas' object
@@ -27,8 +27,8 @@ set(gas, 'T', y(1), 'P', pressure(gas), 'Y', y(2:end));
 
 % energy equation
 wdot = netProdRates(gas);
-tdot = - temperature(gas) * gasconstant * enthalpies_RT(gas)' ...
-    * wdot / (density(gas)*cp_mass(gas));
+tdot = -temperature(gas)*gasconstant*enthalpies_RT(gas)' ...
+    *wdot/(density(gas)*cp_mass(gas));
 
 % set up column vector for dydt
 nsp = nSpecies(gas);

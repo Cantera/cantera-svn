@@ -1,9 +1,7 @@
 function v = multiDiffCoeffs(a)
-% Multicomponent diffusion coefficients (m^2/s) of all of the
-% species.
-%
-% Returns a column vector with the multicomponent diffusion
-% coefficients. Object ``gas`` must belong to a class derived from
+% MULTIDIFFCOEFFS  Get the multicomponent diffusion coefficients.
+% v = multiDiffCoeffs(a)
+% Object ``a`` must belong to a class derived from
 % Transport, and that was constructed by specifying the ``'Multi'``
 % option. If ``'Multi'`` was not specified, you will get the
 % error message ::
@@ -18,11 +16,11 @@ function v = multiDiffCoeffs(a)
 %
 % :param a:
 %     Instance of class :mat:func:`Transport` (or another
-%     object containing an instance of that class)
+%     object derived from Transport)
 %     for which multicomponent diffusion coefficients are desired.
 % :return:
 %     Vector of length nSpecies with the multicomponent diffusion
-%     coefficients.
+%     coefficients. Units: m**2/s
 %
 
 v = trans_get(a.id, 22, nSpecies(a.th));

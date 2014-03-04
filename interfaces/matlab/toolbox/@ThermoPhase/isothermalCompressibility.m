@@ -1,4 +1,6 @@
 function b = isothermalCompressibility(tp)
+% ISOTHERMALCOMPRESSIBILITY  Get the isothermal compressibility.
+% b = isothermalCompressibility(tp)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     object that derives from ThermoPhase)

@@ -1,11 +1,11 @@
 function i = reactor_hndl(r)
-% Integer used to access kernel object
-%
+% REACTOR_HNDL  Get the integer used to access the kernel object.
+% i = reactor_hndl(r)
 % :param r:
 %     Instance of class :mat:func:`Reactor`
 %     for which the handle is desired.
 % :return:
-%     Returns the integer ID of the kinetics kernel object.
+%     Integer used to access the kernel object
 %
 
 i = r.index;

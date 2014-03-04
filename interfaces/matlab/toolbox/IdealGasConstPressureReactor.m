@@ -1,6 +1,6 @@
 function r = IdealGasConstPressureReactor(contents)
-% Create an IdealGasConstPressureReactor object.
-%
+% IDEALGASCONSTPRESSUREREACTOR  Create a constant pressure reactor with an ideal gas.
+% r = IdealGasConstPressureReactor(contents)
 % An IdealGasConstPressureReactor is an instance of class Reactor where the
 % pressure is held constant. The volume is not a state variable, but
 % instead takes on whatever value is consistent with holding the pressure

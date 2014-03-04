@@ -1,6 +1,6 @@
 function setState_HP(tp,hp)
-% Set the specific enthalpy [J/kg] and pressure [Pa].
-%
+% SETSTATE_HP  Set the specific enthalpy and pressure.
+% setState_HP(tp,hp)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     class derived from ThermoPhase)

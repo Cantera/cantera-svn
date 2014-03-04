@@ -1,7 +1,7 @@
 function s = Solution(src, id, trans)
-% Class :mat:func:`Solution` constructor.
-%
-% Class Solution represents solutions of multiple species. A
+% SOLUTION  Solution class constructor.
+% s = Solution(src, id, trans)
+% Class :mat:func:`Solution` represents solutions of multiple species. A
 % solution is defined as a mixture of two or more constituents
 % (species) that are completely mixed on molecular length
 % scales. The macroscopic intensive thermodynamic state of a
@@ -21,8 +21,8 @@ function s = Solution(src, id, trans)
 % argument ``trans`` to one of ``'default'``, ``'Mix'``, or ``'Multi'``.
 % In this case, the phase name must be specified as well. Alternatively,
 % change the ``transport`` node in the CTML file, or ``transport``
-% property inthe CTI file before loading the phase. The transport 
-% modeling cannot be changed once the phase is loaded. 
+% property inthe CTI file before loading the phase. The transport
+% modeling cannot be changed once the phase is loaded.
 %
 % Class :mat:func:`Solution` derives from three more basic classes, and most of
 % its methods are inherited from these classes. These are:
@@ -36,7 +36,7 @@ function s = Solution(src, id, trans)
 % :param src:
 %     Input string of CTI or CTML file name.
 % :param id:
-%     Optional unless ``trans`` is specified. ID of the phase to 
+%     Optional unless ``trans`` is specified. ID of the phase to
 %     import as specified in the CTML or CTI file.
 % :param trans:
 %     String, transport modeling. Possible values are ``'default'``,

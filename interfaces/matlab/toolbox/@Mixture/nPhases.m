@@ -1,4 +1,6 @@
 function n = nPhases(self)
+% NPHASES  Get the number of phases in a mixture.
+% n = nPhases(self)
 % :param self:
 %     Instance of class :mat:func:`Mixture`
 % :return:

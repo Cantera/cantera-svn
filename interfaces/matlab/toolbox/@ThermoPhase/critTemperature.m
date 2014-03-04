@@ -1,4 +1,6 @@
 function v = critTemperature(tp)
+% CRITTEMPERATURE  Get the critical temperature.
+% v = critTemperature(tp)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     object that derives from ThermoPhase)

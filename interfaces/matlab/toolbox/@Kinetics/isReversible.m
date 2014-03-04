@@ -1,6 +1,6 @@
 function yn = isReversible(a, i)
-% Reversible reaction flag.
-%
+% ISREVERSIBLE  Get an array of flags indicating reversibility of a reaction.
+% yn = isReversible(a, i)
 % A reversible reaction is one that runs in both the forward
 % direction (reactants -> products) and in the reverse direction
 % (products -> reactants). The reverse rate for reversible
@@ -13,7 +13,7 @@ function yn = isReversible(a, i)
 %
 % :param a:
 %     Instance of class :mat:func:`Kinetics` (or another
-%     object containing an instance of that class)
+%     object deriving from Kinetics)
 %     for which the reversible flags are desired.
 % :param i:
 %     Integer reaction number

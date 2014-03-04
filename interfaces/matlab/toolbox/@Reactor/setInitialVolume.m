@@ -1,6 +1,6 @@
 function setInitialVolume(r, v0)
-% Set the initial reactor volume
-%
+% SETINITIALVOLUME  Set the initial reactor volume.
+% setInitialVolume(r, v0)
 % :param r:
 %     Instance of class :mat:func:`Reactor`
 % :param v0:

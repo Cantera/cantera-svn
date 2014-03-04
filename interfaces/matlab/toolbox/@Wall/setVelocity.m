@@ -1,8 +1,9 @@
 function setVelocity(w, f)
-% Set the velocity of a wall. Must be set by an instance of
-% class :mat:func:`Func`, which allows the velocity to be an
-% arbitrary function of time. It is possible to specify
-% a constant velocity by using the polynomial functor with
+% SETVELOCITY  Set the velocity of the wall using :mat:func:`Func`.
+% setVelocity(w, f)
+% Must be set by an instance of class :mat:func:`Func`, which allows
+% the velocity to be an arbitrary function of time. It is possible
+% to specify a constant velocity by using the polynomial functor with
 % only the first term specified:
 %
 % .. code-block:: matlab

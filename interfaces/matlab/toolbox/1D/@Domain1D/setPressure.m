@@ -1,6 +1,6 @@
 function d = setPressure(d, p)
-% Set the pressure.
-%
+% SETPRESSURE  Set the pressure.
+% d = setPressure(d, p)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :param p:

@@ -1,4 +1,6 @@
 function y = massFractions(tp)
+% MASSFRACTIONS  Get the mass fractions of all species.
+% y = massFractions(tp)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     object that derives from ThermoPhase)

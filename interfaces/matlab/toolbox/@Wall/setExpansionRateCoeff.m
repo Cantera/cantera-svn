@@ -1,5 +1,7 @@
 function setExpansionRateCoeff(w, k)
-% Set the expansion rate coefficient. The expansion rate coefficient
+% SETEXPANSIONRATECOEFF  Set the expansion rate coefficient.
+% setExpansionRateCoeff(w, k)
+% The expansion rate coefficient
 % determines the velocity of the wall for a given pressure
 % differential between the left and right reactors, according to the
 % formula

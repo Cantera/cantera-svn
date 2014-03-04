@@ -1,8 +1,10 @@
 function d = setFixedTempProfile(d, profile)
+% SETFIXEDTEMPPROFILE  Set a fixed temperature profile.
+% d = setFixedTempProfile(d, profile)
 % Set the temperature profile to use when the
 % energy equation is not being solved. The profile must be entered
 % as an array of positions / temperatures, which may be in rows or
-% columns. 
+% columns.
 %
 % :param d:
 %     Instance of class :mat:func:`Domain1D`

@@ -1,6 +1,6 @@
 function x = build(x, file, pre)
-% Build an XML_Node in memory from an input file.
-%
+% BUILD  Build an XML_Node in memory from an input file.
+% x = build(x, file, pre)
 % :param x:
 %     Instance of class :mat:func:`XML_Node`
 % :param file:

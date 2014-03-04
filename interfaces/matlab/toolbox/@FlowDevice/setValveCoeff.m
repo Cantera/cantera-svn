@@ -1,6 +1,7 @@
 function setValveCoeff(f, k)
-% Set the valve coefficient, :math:`K`. The mass flow rate [kg/s] is 
-% computed from the expression
+% SETVALVECOEFF  Set the valve coefficient :math:`K`.
+% setValveCoeff(f, k)
+% The mass flow rate [kg/s] is computed from the expression
 %
 % .. math:: \dot{m} = K(P_{upstream} - P_{downstream})
 %
@@ -12,7 +13,7 @@ function setValveCoeff(f, k)
 % :param f:
 %     Instance of class :mat:func:`Valve`
 % :param k:
-%     Value of the valve coefficient
+%     Value of the valve coefficient. Units: kg/Pa-s
 %
 
 if f.type == 3

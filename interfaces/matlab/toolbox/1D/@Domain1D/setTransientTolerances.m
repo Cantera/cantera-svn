@@ -1,6 +1,6 @@
 function d = setTransientTolerances(d, component, rtol, atol)
-% Set the tolerances of the transient solver
-%
+% SETTRANSIENTTOLERANCES  Set the transient tolerances.
+% d = setTransientTolerances(d, component, rtol, atol)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :param component:

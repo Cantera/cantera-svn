@@ -1,15 +1,20 @@
 function tp = equilibrate(tp, xy, solver, rtol, maxsteps, maxiter, loglevel)
-% Set the phase to a state of chemical equilibrium.
-%
+% EQUILIBRATE  Set the phase to a state of chemical equilibrium.
+% tp = equilibrate(tp, xy, solver, rtol, maxsteps, maxiter, loglevel)
 % :param XY:
 %     A two-letter string, which must be one of the set
-%     ['TP','TV','HP','SP','SV','UV','PT','VT','PH','PS','VS','VU'].
+%     ``['TP','TV','HP','SP','SV','UV','UP']``,
+%     indicating which pair of properties should be held constant.
+%     Not all of the properties to be held constant are available with
+%     all of the solvers.
 % :param solver:
 %     Specifies the equilibrium solver to use. If solver = 0, a fast
 %     solver using the element potential method will be used. If
-%     solver > 0, a slower but more robust Gibbs minimization solver
-%     will be used. If solver < 0 or is unspecified, the fast solver
-%     will be tried first, then if it fails the other will be tried.
+%     solver = 1, a slower but more robust Gibbs minimization solver
+%     will be used. If solver >= 2, a version of the VCS algorithm will
+%     be used. If solver < 0 or is unspecified, the fast solver
+%     will be tried first, then if it fails the Gibbs minimization solver
+%     will be tried.
 % :param rtol:
 %     The relative error tolerance.
 % :param maxsteps:

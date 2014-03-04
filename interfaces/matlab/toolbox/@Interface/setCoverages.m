@@ -1,6 +1,6 @@
-function setCoverages(s,cov)
-% Set surface coverages of the species in phase ``s``
-%
+function setCoverages(s, cov)
+% SETCOVERAGES  Set surface coverages of the species on an interface.
+% setCoverages(s, cov)
 % :param s:
 %      Instance of class :mat:func:`Interface`
 % :param cov:

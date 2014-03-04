@@ -1,9 +1,9 @@
 function n = nReactions(a)
-% Number of reactions.
-%
+% NREACTIONS  Get the number of reactions.
+% n = nReactions(a)
 % :param a:
 %     Instance of class :mat:func:`Kinetics` (or another
-%     object containing an instance of that class)
+%     object deriving from Kinetics)
 %     for which the number of reactions is desired.
 % :return:
 %     Integer number of reactions

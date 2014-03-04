@@ -1,8 +1,11 @@
 function advanceCoverages(k, dt)
-% Advance the surface coverages forward in time holding the bulk phase concentrations fixed.
+% ADVANCECOVERAGES  Advance the surface coverages forward in time.
+% advanceCoverages(k, dt)
+% The bulk phase concentrations are held fixed during this operation.
 %
 % :param k:
-%     Instance of class :mat:func:`Interface`
+%     Instance of class :mat:func:`Interface` with an associated
+%     :mat:func:`Kinetics` object.
 % :param dt:
 %     Time interval by which the coverages should be advanced
 %

@@ -1,6 +1,6 @@
 function v = child(x, loc)
-% Get the child of an XML_Node instance
-%
+% CHILD  Get the child of an XML_Node instance.
+% v = child(x, loc)
 % :param x:
 %     Instance of class :mat:func:`XML_Node`
 % :param loc:

@@ -1,4 +1,6 @@
 function nm = name(tp)
+% NAME  Get the name of the phase.
+% nm = name(tp)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     object that derives from ThermoPhase)

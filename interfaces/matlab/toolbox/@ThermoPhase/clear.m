@@ -1,6 +1,6 @@
 function clear(tp)
-% Delete the kernel object.
-%
+% CLEAR  Delete the kernel object.
+% clear(tp)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     object that derives from ThermoPhase)

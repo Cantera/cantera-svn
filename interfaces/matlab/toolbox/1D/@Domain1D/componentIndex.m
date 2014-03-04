@@ -1,6 +1,6 @@
 function n = componentIndex(d, name)
-% Get the index of the input component.
-%
+% COMPONENTINDEX  Get the index of a component given its name.
+% n = componentIndex(d, name)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :param name:

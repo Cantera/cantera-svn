@@ -1,6 +1,6 @@
 function x = Reactor(contents, typ)
-% Create a :mat:func:`Reactor` object.
-%
+% REACTOR  Reactor class constructor.
+% x = Reactor(contents, typ)
 % A :mat:func:`Reactor` object simulates a perfectly-stirred reactor.
 % It has a time-dependent state, and may be coupled to other reactors
 % through flow lines or through walls that may expand or
@@ -9,7 +9,7 @@ function x = Reactor(contents, typ)
 % .. code-block:: matlab
 %
 %     >> r1 = Reactor      % an empty reactor
-%     >> r2 = Reactor(gas) % a reactor containing a gas
+%     >> r2 = Reactor(gas) % a reactor containing a phase
 %
 % See also: :mat:func:`Reservoir`, :mat:func:`IdealGasReactor`,
 % :mat:func:`IdealGasConstPressureReactor`, :mat:func:`ConstPressureReactor`

@@ -1,6 +1,6 @@
 function m = FreeFlame(gas, id)
-% FREEFLAME - Freely-propagating flat flame
-%
+% FREEFLAME  Create a freely-propagating flat flame.
+% m = FreeFlame(gas, id)
 % :param gas:
 %     Instance of class :mat:func:`Solution`
 % :param id:

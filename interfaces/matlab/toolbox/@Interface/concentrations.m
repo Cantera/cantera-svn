@@ -1,6 +1,6 @@
 function c = concentrations(s)
-% Get the surface concentrations of the species in the phase ``s``
-%
+% CONCENTRATIONS  Get the concentrations of the species on an interface.
+% c = concentrations(s)
 % :param s:
 %     Instance of class :mat:func:`Interface` with surface species
 % :return:

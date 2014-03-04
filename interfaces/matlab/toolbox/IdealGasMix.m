@@ -1,4 +1,6 @@
-function s = IdealGasMix(infile,b,c)
+function s = IdealGasMix(infile, b, c)
+% IDEALGASMIX  Create a mixture of ideal gases.
+% s = IdealGasMix(infile, b, c)
 % Create a :mat:func:`Solution` instance representing an ideal gas mixture. ::
 %
 %     gas1 = IdealGasMix('ctml_file'[,'transport_model'])
@@ -11,10 +13,10 @@ function s = IdealGasMix(infile,b,c)
 % (CHEMKIN-compatible).  Examples::
 %
 %     g1a = IdealGasMix('mech.xml')
-%     g1b = IdealGasMix('mech.xml','Multi')
+%     g1b = IdealGasMix('mech.xml', 'Multi')
 %     g2 = IdealGasMix('mech2.inp')
-%     g3 = IdealGasMix('mech3.inp','therm.dat')
-%     g4 = IdealGasMix('mech4.inp','therm.dat','tran.dat')
+%     g3 = IdealGasMix('mech3.inp', 'therm.dat')
+%     g4 = IdealGasMix('mech4.inp', 'therm.dat', 'tran.dat')
 %
 % Objects ``g1a`` and ``g1b`` are created from a CTML file. CTML files
 % contain all data required to build the object, and do not require
@@ -45,10 +47,10 @@ function s = IdealGasMix(infile,b,c)
 %     Instance of class :mat:func:`Solution`
 %
 
-dotloc = findstr(infile,'.');
+dotloc = findstr(infile, '.');
 if dotloc(end) > 1
     ext = infile(dotloc(end):end);
-    if strcmp(ext,'.cti') || strcmp(ext, '.xml')
+    if strcmp(ext, '.cti') || strcmp(ext, '.xml')
         if nargin == 1
             s = Solution(infile);
         elseif nargin == 2
@@ -64,6 +66,6 @@ if nargin == 1
 elseif nargin == 2
     c = '-';
 end
-xml = ck2cti(infile,b,c);
+xml = ck2cti(infile, b, c);
 s = Solution(xml);
-set(s,'P',oneatm);
+set(s, 'P', oneatm);

@@ -1,7 +1,6 @@
 function install(f, upstream, downstream)
-% Install a flow device between the upstream and 
-% downstream reactors or reservoirs
-%
+% INSTALL  Install a flow device between reactors or reservoirs.
+% install(f, upstream, downstream)
 % :param f:
 %     Instance of class :mat:func:`FlowDevice` to install
 % :param upstream:
@@ -13,7 +12,7 @@ function install(f, upstream, downstream)
 %
 
 if nargin == 3
-    if ~isa(upstream,'Reactor') || ~isa(downstream,'Reactor')
+    if ~isa(upstream, 'Reactor') || ~isa(downstream, 'Reactor')
         error(['Flow devices can only be installed between reactors or' ...
             ' reservoirs'])
     end

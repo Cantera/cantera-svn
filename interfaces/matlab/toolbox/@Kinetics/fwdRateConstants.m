@@ -1,9 +1,12 @@
 function kf = fwdRateConstants(a)
-% Forward reaction rate constants for all the reactions.
+% FWDRATECONSTANTS  Get the forward reaction rate constants.
+% kf = fwdRateConstants(a)
+%
+% see also: :mat:func:`revRateConstants`, :mat:func:`equil_Kc`
 %
 % :param a:
 %     Instance of class :mat:func:`Kinetics` (or another
-%     object containing an instance of that class)
+%     object deriving from Kinetics)
 %     for which forward rate constants are desired.
 % :return:
 %     Returns a column vector of the forward rate constants of

@@ -1,6 +1,6 @@
-function r = times(a,b)
-% Create a functor that multiplies two other functors
-%
+function r = times(a, b)
+% TIMES  Create a functor that multiplies two other functors.
+% r = times(a, b)
 % :param a:
 %     Instance of class :mat:func:`Func`
 % :param b:

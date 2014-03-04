@@ -1,8 +1,8 @@
 function setFunction(f, mf)
-% Set the mass flow rate through a mass flow controller by using an
-% an instance of class :mat:func:`Func`.
+% SETFUNCTION  Set the mass flow rate with class :mat:func:`Func`.
+% setFunction(f, mf)
 %
-% See also: :mat:func:`MassFlowController`
+% See also: :mat:func:`MassFlowController`, :mat:func:`Func`
 %
 % :param f:
 %     Instance of class :mat:func:`MassFlowController`

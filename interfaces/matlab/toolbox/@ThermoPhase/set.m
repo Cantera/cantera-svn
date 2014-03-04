@@ -1,6 +1,6 @@
 function set(tp,varargin)
-% Set properties of a :mat:func:`ThermoPhase`.
-%
+% SET  Set properties of a phase.
+% set(tp,varargin)
 % The properties that may be set are
 %
 % * Temperature     (T)
@@ -24,7 +24,7 @@ function set(tp,varargin)
 % specified in a single call to :mat:func:`set`, plus one of
 % mass fractions or mole fractions.
 %
-% Examples:
+% Examples::
 %
 %    >> set(gas,'Temperature',600.0);
 %    >> set(gas,'T',600.0);

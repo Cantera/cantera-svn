@@ -1,6 +1,6 @@
 function setTimeStep(s, stepsize, steps)
-% Specify a sequence of time steps.
-%
+% SETTIMESTEP  Specify a sequence of time steps.
+% setTimeStep(s, stepsize, steps)
 % :param stepsize:
 %     Initial step size (s)
 % :param steps:

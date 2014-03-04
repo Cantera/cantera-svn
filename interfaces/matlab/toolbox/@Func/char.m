@@ -1,4 +1,6 @@
 function s = char(p)
+% CHAR  Get the formatted string to display the function.
+% s = char(p)
 % :param p:
 %     Instance of class :mat:func:`Func`
 % :return:

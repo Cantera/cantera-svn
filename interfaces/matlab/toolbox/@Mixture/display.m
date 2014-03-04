@@ -1,7 +1,6 @@
 function display(self)
-% Overload of built-in display function to print the state of the
-% phases in an instance of :mat:func:`Mixture`.
-%
+% DISPLAY  Display the state of the mixture on the terminal.
+% display(self)
 % :param self:
 %     Instance of class :mat:func:`Mixture`
 %

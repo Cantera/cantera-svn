@@ -1,6 +1,6 @@
 function s = componentName(d, n)
-% Name of component n.
-%
+% COMPONENTNAME  Get the name of a component given its index.
+% s = componentName(d, n)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :param n:

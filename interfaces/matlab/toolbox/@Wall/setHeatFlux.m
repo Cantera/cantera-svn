@@ -1,5 +1,7 @@
 function setHeatFlux(w, f)
-% Set the heat flux through a wall. Must be set by an instance of
+% SETHEATFLUX  Set the heat flux using :mat:func:`Func`
+% setHeatFlux(w, f)
+% Must be set by an instance of
 % class :mat:func:`Func`, which allows the heat flux to be an
 % arbitrary function of time. It is possible to specify
 % a constant heat flux by using the polynomial functor with

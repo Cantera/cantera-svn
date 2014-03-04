@@ -1,6 +1,6 @@
 function d = setMdot(d, mdot)
-% Set the mass flow rate
-%
+% SETMDOT  Set the mass flow rate.
+% d = setMdot(d, mdot)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :param mdot:

@@ -1,6 +1,6 @@
 function o = Oxygen()
-% Return an object representing oxygen.
-%
+% OXYGEN  Return an object representing oxygen.
+% o = Oxygen()
 % The object returned by this method implements an accurate equation of
 % state for oxygen that can be used in the liquid, vapor, saturated
 % liquid/vapor, and supercritical regions of the phase diagram.  The
@@ -14,4 +14,4 @@ function o = Oxygen()
 %     Instance of class :mat:func:`Solution`
 %
 
-o = Solution('liquidvapor.cti','oxygen');
+o = Solution('liquidvapor.cti', 'oxygen');

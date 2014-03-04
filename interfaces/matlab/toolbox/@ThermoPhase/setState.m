@@ -1,4 +1,6 @@
 function a = setState(a,job,values)
+% SETSTATE  Set the state.
+% a = setState(a,job,values)
 % Deprecated in favor of :mat:func:`set`
 %
 % See also: :mat:func:`set`

@@ -1,6 +1,6 @@
 function x = atomicMasses(tp)
-% Vector of element atomic masses [kg/kmol].
-%
+% ATOMICMASSES  Get the atomic masses of the elements.
+% x = atomicMasses(tp)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     object that derives from ThermoPhase).

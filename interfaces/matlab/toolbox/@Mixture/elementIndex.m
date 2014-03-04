@@ -1,4 +1,6 @@
 function n = elementIndex(self, name)
+% ELEMENTINDEX  Get the index of an element.
+% n = elementIndex(self, name)
 % :param self:
 %     Instance of class :mat:func:`Mixture`
 % :param name:

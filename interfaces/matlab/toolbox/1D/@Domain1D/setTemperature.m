@@ -1,6 +1,6 @@
 function d = setTemperature(d, t)
-% Set the temperature.
-%
+% SETTEMPERATURE  Set the temperature.
+% d = setTemperature(d, t)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :param t:

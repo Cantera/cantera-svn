@@ -1,8 +1,9 @@
 function mu = chemPotentials(tp)
-% This method returns a vector containing the species
-% chemical potentials [J/kmol]. The expressions used to
-% compute these depend on the model implemented by the
-% underlying kernel thermo manager.
+% CHEMPOTENTIALS  Get the chemical potentials of the species.
+% mu = chemPotentials(tp)
+% The expressions used to compute the chemical potential
+% depend on the model implemented by the underlying kernel
+% thermo manager.
 %
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another

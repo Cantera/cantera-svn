@@ -1,6 +1,6 @@
 function a = area(w)
-% Get the area of the wall.
-%
+% AREA  Get the area of the wall.
+% a = area(w)
 % :param w:
 %     Instance of class :mat:func:`Wall`
 % :return:

@@ -1,6 +1,6 @@
 function display(a)
-% Display the equation of the input function on the terminal
-%
+% DISPLAY  Display the equation of the input function on the terminal.
+% display(a)
 % :param a:
 %     Instance of class :mat:func:`Func`
 %

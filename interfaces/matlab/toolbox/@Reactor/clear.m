@@ -1,6 +1,6 @@
 function clear(r)
-% Clear the specified reactor from memory.
-%
+% CLEAR  Clear a reactor from memory.
+% clear(r)
 % :param f:
 %     Instance of :mat:func:`Reactor` to be cleared.
 %

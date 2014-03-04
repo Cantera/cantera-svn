@@ -1,6 +1,6 @@
 function flame = npflame_init(gas, left, flow, right, fuel, oxidizer, nuox)
-% Create a non-premixed flame object.
-%
+% NPFLAME_INIT  Create a non-premixed flame stack.
+% flame = npflame_init(gas, left, flow, right, fuel, oxidizer, nuox)
 % :param gas:
 %     Object representing the gas, instance of class
 %     :mat:func:`Solution`, and an ideal gas. This object will be used

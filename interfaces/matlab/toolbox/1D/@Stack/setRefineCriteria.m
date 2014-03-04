@@ -1,6 +1,6 @@
 function s = setRefineCriteria(s, n, ratio, slope, curve, prune)
-% Set the criteria used to refine the grid.
-%
+% SETREFINECRITERIA  Set the criteria used to refine the grid.
+% s = setRefineCriteria(s, n, ratio, slope, curve, prune)
 % :param s:
 %     Instance of class :mat:func:`Stack`
 % :param n:

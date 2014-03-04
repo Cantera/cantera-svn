@@ -1,6 +1,6 @@
-function dydt = reactor_ode(t,y,gas,vdot,area,heatflux)
-% ODE system for a generic zero-dimensional reactor.
-%
+function dydt = reactor_ode(t, y, gas, vdot, area, heatflux)
+% REACTOR_ODE  Set up the ODE sysem for a generic 0-D reactor.
+% dydt = reactor_ode(t, y, gas, vdot, area, heatflux)
 % Function :mat:func:`reactor_ode` evaluates the system of ordinary
 % differential equations for a zero-dimensional reactor with arbitrary
 % heat transfer and  volume change.
@@ -26,15 +26,15 @@ function dydt = reactor_ode(t,y,gas,vdot,area,heatflux)
 % :param heatflux:
 %     Heat flux into or out of the reactor.
 % :return:
-%     Vector of length nSpecies + 2 representing the solution 
+%     Vector of length nSpecies + 2 representing the solution
 %     derivative.
 %
 
-[m,n] = size(y);
-dydt = zeros(m,n);
+[m, n] = size(y);
+dydt = zeros(m, n);
 
 for j = 1:n
-    this_y = y(:,j);
+    this_y = y(:, j);
     int_energy = this_y(1);
     vol = this_y(2);
     masses = this_y(3:end);
@@ -45,7 +45,7 @@ for j = 1:n
     v_mass = vol/total_mass;
 
     % set the state of the gas by specifying (u,v,{Y_k})
-    setMassFractions(gas,masses);
+    setMassFractions(gas, masses);
     setState_UV(gas, [u_mass v_mass]);
     p = pressure(gas);
 
@@ -55,13 +55,13 @@ for j = 1:n
     % energy equation
     a = feval(area, t, vol);
     q = feval(heatflux, t, gas);
-    udt = -p * vdt + a * q;
+    udt = -p*vdt + a*q;
 
     % species equations
-    ydt = total_mass * ydot(gas);
+    ydt = total_mass*ydot(gas);
 
     % set up column vector for dydt
-    dydt(:,j) = [udt
+    dydt(:, j) = [udt
         vdt
         ydt ];
 end

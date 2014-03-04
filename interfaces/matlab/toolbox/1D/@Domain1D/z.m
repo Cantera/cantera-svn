@@ -1,6 +1,6 @@
 function zz = z(d, n)
-% Get the grid points.
-%
+% Z  Get the grid points.
+% zz = z(d, n)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :param n:

@@ -1,6 +1,6 @@
 function addPhase(self, phase, moles)
-% Add a phase to an instance of class :mat:func:`Mixture`
-%
+% ADDPHASE  Add a phase to a mixture.
+% addPhase(self, phase, moles)
 % :param self:
 %     Instance of class :mat:func:`Mixture` to which phases should be
 %     added

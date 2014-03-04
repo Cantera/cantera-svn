@@ -1,4 +1,6 @@
 function v = entropy_mass(tp)
+% ENTROPY_MASS  Get the mass specific entropy.
+% v = entropy_mass(tp)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     object that derives from ThermoPhase)

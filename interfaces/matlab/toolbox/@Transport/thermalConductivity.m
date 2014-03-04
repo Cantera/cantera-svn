@@ -1,12 +1,12 @@
 function v = thermalConductivity(a)
-% Get the thermal conductivity in W/(m-K).
-%
+% THERMALCONDUCTIVITY  Get the thermal conductivity.
+% v = thermalConductivity(a)
 % :param a:
 %     Instance of class :mat:func:`Transport` (or another
-%     object containing an instance of that class)
+%     object derived from Transport)
 %     for which the thermal conductivity is desired.
 % :return:
-%     Thermal conductivity in W/(m-K).
+%     Thermal conductivity. Units: W/m-K
 %
 
 v = trans_get(a.id, 2);

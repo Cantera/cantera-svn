@@ -1,6 +1,9 @@
 function s = importPhase(file, name)
-% Import a phase from a CTI file. See class :mat:func:`Solution` and
-% :ref:`sec-phases`.
+% IMPORTPHASE  Import a phase from a CTI file
+% s = importPhase(file, name)
+% See :ref:`sec-phases`.
+%
+% See also: :mat:func:`Solution`
 %
 % :param file:
 %     CTI file containing phase definition

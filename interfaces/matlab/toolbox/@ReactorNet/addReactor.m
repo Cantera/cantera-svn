@@ -1,6 +1,6 @@
 function addReactor(net, reactor)
-% Add a reactor to a network
-%
+% ADDREACTOR  Add a reactor to a network.
+% addReactor(net, reactor)
 % :param net:
 %     Instance of class :mat:func:`ReactorNet`
 % :param reactor:

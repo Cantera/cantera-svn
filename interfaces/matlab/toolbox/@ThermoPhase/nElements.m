@@ -1,4 +1,6 @@
 function n = nElements(tp)
+% NELEMENTS  Get the number of elements.
+% n = nElements(tp)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     object that derives from ThermoPhase)

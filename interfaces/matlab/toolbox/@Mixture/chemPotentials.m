@@ -1,9 +1,10 @@
 function mu = chemPotentials(self)
-% Chemical potentials of all species in all phases in an instance of
-% class :mat:func:`Mixture`.
-%
+% CHEMPOTENTIALS  Get the chemical potentials of species in a mixture.
+% mu = chemPotentials(self)
 % :param self:
 %     Instance of class :mat:func:`Mixture`
+% :return:
+%     Vector of chemical potentials. Units: J/kmol
 %
 
 mu = mixturemethods(41, mix_hndl(self));

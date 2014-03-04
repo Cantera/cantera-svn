@@ -1,9 +1,12 @@
 function kc = equil_Kc(a)
-% Equilibrium constants for all reactions
+% EQUIL_KC  Get the equilibrium constants for all reactions
+% kc = equil_Kc(a)
+%
+% See also: :mat:func:`fwdRateConstants`, :mat:func:`revRateConstants`
 %
 % :param a:
 %     Instance of class :mat:func:`Kinetics` (or another
-%     object containing an instance of that class)
+%     object deriving from Kinetics)
 %     for which equilibrium constants are desired.
 % :return:
 %     Returns a column vector of the equilibrium constants

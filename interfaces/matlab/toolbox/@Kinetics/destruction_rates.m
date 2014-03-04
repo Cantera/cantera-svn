@@ -1,6 +1,8 @@
 function ddot = destruction_rates(a)
-% Chemical destruction rates for all species. This function is
-% deprecated in favor of the function :mat:func:`destructionRates`
+% DESTRUCTION_RATES  Get the chemical destruction rates.
+% ddot = destruction_rates(a)
+% This function is deprecated in favor of the function
+% :mat:func:`destructionRates`
 %
 
 warning('This function is deprecated. Use destructionRates instead.')

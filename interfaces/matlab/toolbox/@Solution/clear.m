@@ -1,7 +1,6 @@
 function clear(s)
-% Delete the kernel objects associated with an instance of
-% :mat:func:`Solution`.
-%
+% CLEAR  Delete the kernel objects associated with a Solution.
+% clear(s)
 % :param s:
 %     Instance of class :mat:func:`Solution`
 %

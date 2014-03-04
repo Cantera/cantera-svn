@@ -1,9 +1,9 @@
 function clear(k)
-% Delete the Kinetics instance.
-%
+% CLEAR  Delete the Kinetics instance.
+% clear(k)
 % :param k:
 %     Instance of class :mat:func:`Kinetics` (or another
-%     object containing an instance of that class)
+%     object deriving from Kinetics)
 %
 
 kinetics_set(k.id,3, 0, 0);

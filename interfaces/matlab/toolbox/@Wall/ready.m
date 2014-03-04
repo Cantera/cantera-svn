@@ -1,6 +1,6 @@
 function ok = ready(w)
-% Checks whether a wall is ready.
-%
+% READY  Check whether a wall is ready.
+% ok = ready(w)
 % :param w:
 %     Instance of class :mat:func:`Wall`
 % :return:

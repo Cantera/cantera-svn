@@ -1,6 +1,6 @@
 function y = massFraction(d, k)
-% Mass fraction of species k.
-%
+% MASSFRACTION  Get the mass fraction of a species given its integer index.
+% y = massFraction(d, k)
 % This method returns the mass fraction of species ``k``, where
 % k is the integer index of the species in the flow domain
 % to which the boundary domain is attached.

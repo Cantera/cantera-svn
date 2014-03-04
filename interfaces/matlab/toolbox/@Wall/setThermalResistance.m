@@ -1,6 +1,6 @@
 function setThermalResistance(w, r)
-% Set the thermal resistance of a wall.
-%
+% SETTHERMALRESISTANCE  Set the thermal resistance.
+% setThermalResistance(w, r)
 % :param w:
 %     Instance of class :mat:func:`Wall`
 % :param r:

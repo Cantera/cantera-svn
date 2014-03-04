@@ -1,12 +1,13 @@
 function nu_p = stoich_p(a,species,rxns)
-% Product stoichiometric coefficients.
+% STOICH_P  Get the product stoichiometric coefficients.
+% nu_p = stoich_p(a,species,rxns)
 %
 % See also: :mat:func:`stoich_r`, :mat:func:`stoich_net`
 %
 % :param a:
 %     Instance of class :mat:func:`Kinetics` (or another
-%     object containing an instance of that class)
-%     for which the stoichiometric coefficients are desired.
+%     object deriving from Kinetics)
+%     for which the product stoichiometric coefficients are desired.
 % :param species:
 %     Species indices for which product stoichiometric coefficients
 %     should be retrieved. Optional argument; if specified, ``rxns``

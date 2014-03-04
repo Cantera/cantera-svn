@@ -1,6 +1,6 @@
 function writeStats(s)
-% Print statistics for the current solution.
-%
+% WRITESTATS  Print statistics for the current solution.
+% writeStats(s)
 % Prints a summary of the number of function and
 % Jacobian evaluations for each grid, and the CPU time spent on
 % each one.

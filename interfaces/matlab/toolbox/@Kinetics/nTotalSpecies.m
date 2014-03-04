@@ -1,10 +1,12 @@
 function nsp = nTotalSpecies(a)
+% NTOTALSPECIES  Get the total number of species.
+% nsp = nTotalSpecies(a)
 % The total number of species, summed over all
 % participating phases.
 %
 % :param a:
 %     Instance of class :mat:func:`Kinetics` (or another
-%     object containing an instance of that class)
+%     object deriving from Kinetics)
 %     for which the number of species is desired.
 % :return:
 %     Integer total number of species

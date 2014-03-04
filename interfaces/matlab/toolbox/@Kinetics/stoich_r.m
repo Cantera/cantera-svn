@@ -1,12 +1,13 @@
 function nu_r = stoich_r(a,species,rxns)
-% Reactant stoichiometric coefficients.
+% STOICH_R  Get the reactant stoichiometric coefficients.
+% nu_r = stoich_r(a,species,rxns)
 %
 % See also: :mat:func:`stoich_p`, :mat:func:`stoich_net`
 %
 % :param a:
 %     Instance of class :mat:func:`Kinetics` (or another
-%     object containing an instance of that class)
-%     for which the stoichiometric coefficients are desired.
+%     object deriving from Kinetics)
+%     for which the reactant stoichiometric coefficients are desired.
 % :param species:
 %     Species indices for which reactant stoichiometric coefficients
 %     should be retrieved. Optional argument; if specified, ``rxns``

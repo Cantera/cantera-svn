@@ -1,6 +1,6 @@
 function plotSolution(s, domain, component)
-% Plot a specified solution component
-%
+% PLOTSOLUTION  Plot a specified solution component.
+% plotSolution(s, domain, component)
 % :param s:
 %     Instance of class :mat:func:`Stack`
 % :param domain:

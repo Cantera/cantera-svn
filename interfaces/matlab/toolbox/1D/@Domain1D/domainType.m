@@ -1,6 +1,6 @@
 function i = domainType(d)
-% Type of domain.
-%
+% DOMAINTYPE  Get the type of domain.
+% i = domainType(d)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :return:

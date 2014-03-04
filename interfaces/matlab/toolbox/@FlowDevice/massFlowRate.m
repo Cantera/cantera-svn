@@ -1,4 +1,6 @@
 function mdot = massFlowRate(f, time)
+% MASSFLOWRATE  Get the mass flow rate at a given time.
+% mdot = massFlowRate(f, time)
 % :param f:
 %     Instance of class :mat:func:`MassFlowController`
 % :param time:

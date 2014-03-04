@@ -1,5 +1,6 @@
 function s = importInterface(file, name, phase1, phase2)
-% Import an interface from a CTI or CTML file between two phases.
+% IMPORTINTERFACE  Import an interface between phases.
+% s = importInterface(file, name, phase1, phase2)
 % See :ref:`sec-interfaces`.
 %
 % :param file:

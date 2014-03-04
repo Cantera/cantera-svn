@@ -1,6 +1,6 @@
 function t = atol(r)
-% Get the absolute error tolerance.
-%
+% ATOL  Get the absolute error tolerance.
+% t = atol(r)
 % :param r:
 %     Instance of class :mat:func:`ReactorNet`
 % :return:

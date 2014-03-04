@@ -1,9 +1,9 @@
-function n = addChild(root, id, val)
-% Add a child to the root.
-%
+function n = addChild(root, name, val)
+% ADDCHILD  Add a child to the root.
+% n = addChild(root, name, val)
 % :param root:
 %     Instance of class :mat:func:`XML_Node`
-% :param id:
+% :param name:
 %     String ID of the child to be added.
 % :param val:
 %     String value to be added to the child.
@@ -11,4 +11,4 @@ function n = addChild(root, id, val)
 %     Instance of class :mat:func:`XML_Node`
 %
 
-n = ctmethods(10, 11, root.id, id, val);
+n = ctmethods(10, 11, root.id, name, val);

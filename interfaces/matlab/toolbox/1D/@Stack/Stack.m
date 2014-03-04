@@ -1,9 +1,11 @@
 function s = Stack(domains)
-% A one-dimensional 'stack' of domains.
-%
+% STACK  Stack class constructor.
+% s = Stack(domains)
 % A stack object is a container for one-dimensional domains,
 % which are instances of class Domain1D. The domains are of two
 % types - extended domains, and connector domains.
+%
+% See also: :mat:func:`Domain1D`
 %
 % :param domains:
 %     Vector of domain instances

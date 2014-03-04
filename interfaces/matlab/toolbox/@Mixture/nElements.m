@@ -1,4 +1,6 @@
 function n = nElements(self)
+% NELEMENTS  Get the number of elements in a mixture.
+% n = nElements(self)
 % :param self:
 %     Instance of class :mat:func:`Mixture`
 % :return:

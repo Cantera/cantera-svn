@@ -1,12 +1,13 @@
 function nu = stoich_net(a,species,rxns)
-% net stoichiometric coefficients.
+% STOICH_NET  Get the net stoichiometric coefficients.
+% nu = stoich_net(a,species,rxns)
 %
 % See also: :mat:func:`stoich_r`, :mat:func:`stoich_p`
 %
 % :param a:
 %     Instance of class :mat:func:`Kinetics` (or another
-%     object containing an instance of that class)
-%     for which the stoichiometric coefficients are desired.
+%     object deriving from Kinetics)
+%     for which the net stoichiometric coefficients are desired.
 % :param species:
 %     Species indices for which net stoichiometric coefficients
 %     should be retrieved. Optional argument; if specified, ``rxns``

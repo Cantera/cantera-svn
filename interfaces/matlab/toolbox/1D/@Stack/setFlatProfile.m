@@ -1,6 +1,6 @@
 function setFlatProfile(s, domain, comp, v)
-% Set a component to a value across the entire domain
-%
+% SETFLATPROFILE  Set a component to a value across the entire domain.
+% setFlatProfile(s, domain, comp, v)
 % :param s:
 %     Instance of class :mat:func:`Stack`
 % :param domain:

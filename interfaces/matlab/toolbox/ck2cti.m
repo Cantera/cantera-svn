@@ -1,6 +1,7 @@
 function f = ck2cti(infile, thermo, transport)
-% Convert a CHEMKIN-compatible reaction mechanism file to
-% Cantera format. Examples::
+% CK2CTI  Convert a CHEMKIN input file to Cantera format.
+% f = ck2cti(infile, thermo, transport)
+% Examples::
 %
 %    f = ck2cti('chem.inp')
 %    f = ck2cti('chem.inp', 'therm.dat')
@@ -34,7 +35,7 @@ elseif nargin == 2
     transport = '-';
 end
 
-dotloc = findstr(infile,'.');
+dotloc = findstr(infile, '.');
 if dotloc(end) > 1
     idtag = infile(1:dotloc(end)-1);
     outfile = [idtag '.cti'];
@@ -43,6 +44,6 @@ else
     outfile = [infile '.cti'];
 end
 
-iok = ctmethods(0,1, infile, thermo, transport, idtag, 0, 0);
+iok = ctmethods(0, 1, infile, thermo, transport, idtag, 0, 0);
 
 f = outfile;

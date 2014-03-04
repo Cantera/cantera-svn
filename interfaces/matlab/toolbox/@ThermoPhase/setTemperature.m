@@ -1,4 +1,6 @@
 function setTemperature(tp,t)
+% SETTEMPERATURE  Set the temperature.
+% setTemperature(tp,t)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     class derived from ThermoPhase)

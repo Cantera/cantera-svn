@@ -1,6 +1,6 @@
 function rho = density(r)
-% Get the density of the phase in the input reactor.
-%
+% DENSITY  Get the density of the reactor.
+% rho = density(r)
 % :param r:
 %     Instance of class :mat:func:`Reactor`
 % :return:

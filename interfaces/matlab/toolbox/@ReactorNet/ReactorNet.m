@@ -1,8 +1,8 @@
 function x = ReactorNet(reactors)
-% Create a :mat:func:`ReactorNet` object.
-%
+% REACTORNET  ReactorNet class constructor.
+% x = ReactorNet(reactors)
 % A :mat:func:`ReactorNet` object is a container that holds one
-% or more Reactor objects in a network. :mat:func:`ReactorNet`
+% or more :mat:func:`Reactor` objects in a network. :mat:func:`ReactorNet`
 % objects are used to simultaneously advance the state of one or
 % more coupled reactors.
 %
@@ -14,6 +14,8 @@ function x = ReactorNet(reactors)
 %
 %     >> reactor_network = ReactorNet({r1, r2})
 %     >> advance(reactor_network, time)
+%
+% See also: :mat:func:`Reactor`
 %
 % :param reactors:
 %     A single instance of :mat:func:`Reactor` or a cell array

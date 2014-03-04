@@ -1,6 +1,6 @@
 function n = nChildren(root)
-% Get the number of children of a XML_Node
-%
+% NCHILDREN  Get the number of children of an XML_Node.
+% n = nChildren(root)
 % :param root:
 %     Instance of class :mat:func:`XML_Node`
 % :return:

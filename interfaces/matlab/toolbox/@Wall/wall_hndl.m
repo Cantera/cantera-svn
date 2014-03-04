@@ -1,11 +1,11 @@
 function i = wall_hndl(w)
-% Integer used to access kernel object
-%
+% WALL_HNDL  Get the integer used to access the kernel object.
+% i = wall_hndl(w)
 % :param w:
 %     Instance of class :mat:func:`Wall`
 %     for which the handle is desired.
 % :return:
-%     Returns the integer ID of the wall kernel object.
+%     Integer used to access the kernel object
 %
 
 i = w.index;

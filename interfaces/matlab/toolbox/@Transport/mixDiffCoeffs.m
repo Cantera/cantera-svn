@@ -1,9 +1,7 @@
 function v = mixDiffCoeffs(a)
-% Mixture-averaged diffusion coefficients (m^2/s) of all of the
-% species.
-%
-% Returns a column vector with the mixture-averaged diffusion
-% coefficients. Object ``gas`` must belong to a class derived from
+% MIXDIFFCOEFFS  Get the mixture-averaged diffusion coefficients.
+% v = mixDiffCoeffs(a)
+% Object ``a`` must belong to a class derived from
 % Transport, and that was constructed by specifying the ``'Mix'``
 % option. If ``'Mix'`` was not specified, you will get the error message ::
 %
@@ -19,11 +17,11 @@ function v = mixDiffCoeffs(a)
 %
 % :param a:
 %     Instance of class :mat:func:`Transport` (or another
-%     object containing an instance of that class)
+%     object derived from Transport)
 %     for which mixture-averaged diffusion coefficients are desired.
 % :return:
 %     Vector of length nSpecies with the mixture-averaged diffusion
-%     coefficients.
+%     coefficients. Units: m**2/s
 %
 
 v = trans_get(a.id, 11, nSpecies(a.th));

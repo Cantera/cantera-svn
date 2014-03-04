@@ -1,4 +1,6 @@
 function setPressure(tp,p)
+% SETPRESSURE  Set the pressure.
+% setPressure(tp,p)
 % The pressure is set by changing the density holding the
 % temperature and chemical composition fixed.
 %

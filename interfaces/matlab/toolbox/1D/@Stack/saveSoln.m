@@ -1,5 +1,7 @@
 function saveSoln(s, fname, id, desc)
-% Save a solution to a file in a format that
+% SAVESOLN  Save a solution to a file.
+% saveSoln(s, fname, id, desc)
+% The output file is in a format that
 % can be used by :mat:func:`restore`
 %
 % :param s:

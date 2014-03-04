@@ -1,13 +1,15 @@
 function e = reactionEqn(a, irxn)
-% Reaction equation of reaction ``irxn``. If only the first argument
+% REACTIONEQN  Get the reaction equation of a reaction.
+% e = reactionEqn(a, irxn)
+% If only the first argument
 % is given, the reaction equations of all of the reactions are
 % returned in a cell array. Otherwise, ``irxn`` must be an integer
 % or vector of integers.
 %
 % :param a:
 %     Instance of class :mat:func:`Kinetics` (or another
-%     object containing an instance of that class)
-%     for which the number of species is desired.
+%     object deriving from Kinetics)
+%     for which the reaction equations are desired.
 % :param irxn:
 %     Optional. Integer or vector of integer reaction numbers.
 % :return:

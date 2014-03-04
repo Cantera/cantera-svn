@@ -1,6 +1,6 @@
 function setState_SP(tp,sp)
-% Set the specific entropy [J/kg-K] and pressure [Pa].
-%
+% SETSTATE_SP  Set the specific entropy and pressure.
+% setState_SP(tp,sp)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     class derived from ThermoPhase)

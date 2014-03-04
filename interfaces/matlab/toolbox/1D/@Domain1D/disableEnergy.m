@@ -1,6 +1,6 @@
 function d = disableEnergy(d)
-% Disable the energy equation
-%
+% DISABLEENERGY  Disable the energy equation.
+% d = disableEnergy(d)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 %

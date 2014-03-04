@@ -1,4 +1,6 @@
 function setSpeciesMoles(self, moles)
+% SETSPECIESMOLES  Set the moles of the species.
+% setSpeciesMoles(self, moles)
 % Set the moles of the species in kmol. The moles may
 % be specified either as a string, or as an vector. If a vector is
 % used, it must be dimensioned at least as large as the total number

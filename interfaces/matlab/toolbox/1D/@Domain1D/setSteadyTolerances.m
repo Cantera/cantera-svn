@@ -1,6 +1,6 @@
 function d = setSteadyTolerances(d, component, rtol, atol)
-% Set the tolerances of the steady-state solver
-%
+% SETSTEADYTOLERANCES  Set the steady-state tolerances.
+% d = setSteadyTolerances(d, component, rtol, atol)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :param component:

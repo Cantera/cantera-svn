@@ -1,12 +1,12 @@
 function v = viscosity(a)
-% Get the dynamic viscosity.
-%
+% VISCOSITY  Get the dynamic viscosity.
+% v = viscosity(a)
 % :param a:
 %     Instance of class :mat:func:`Transport` (or another
-%     object containing an instance of that class)
+%     object derived from Transport)
 %     for which the viscosity is desired.
 % :return:
-%     The viscosity in Pa*s
+%     Dynamic viscosity. Units: Pa*s
 %
 
 v = trans_get(a.id, 1);

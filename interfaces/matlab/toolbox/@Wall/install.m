@@ -1,6 +1,6 @@
 function install(w, left, right)
-% Install a wall between two reactors.
-%
+% INSTALL  Install a wall between two reactors.
+% install(w, left, right)
 % :param w:
 %     Instance of class :mat:func:`Wall`
 % :param left:

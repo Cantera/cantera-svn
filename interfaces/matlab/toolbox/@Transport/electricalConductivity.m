@@ -1,9 +1,9 @@
 function v = electricalConductivity(a)
-% Get the electrical conductivity in S/m.
-%
+% ELECTRICALCONDUCTIVITY  Get the electrical conductivity.
+% v = electricalConductivity(a)
 % :param a:
 %     Instance of class :mat:func:`Transport` (or another
-%     object containing an instance of that class)
+%     object derived from Transport)
 %     for which the electrical conductivity is desired.
 % :return:
 %     Electrical conductivity in S/m

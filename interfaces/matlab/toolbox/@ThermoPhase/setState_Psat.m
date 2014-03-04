@@ -1,6 +1,6 @@
 function setState_Psat(tp,px)
-% Set the fluid to a saturated state at pressure px
-%
+% SETSTATE_PSAT  Set the fluid to a saturated state at a given pressure.
+% setState_Psat(tp,px)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     class derived from ThermoPhase)

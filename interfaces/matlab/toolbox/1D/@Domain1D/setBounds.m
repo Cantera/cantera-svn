@@ -1,6 +1,6 @@
 function d = setBounds(d, component, lower, upper)
-% Set bounds on the solution.
-%
+% SETBOUNDS  Set bounds on the solution components.
+% d = setBounds(d, component, lower, upper)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :param component:

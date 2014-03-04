@@ -1,4 +1,6 @@
 function x = moleFraction(tp, species)
+% MOLEFRACTION  Get the mole fraction of a species.
+% x = moleFraction(tp, species)
 % :param tp:
 %     Instance of class :mat:func:`ThermoPhase` (or another
 %     object that derives from ThermoPhase)

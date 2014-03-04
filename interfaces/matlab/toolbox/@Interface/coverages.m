@@ -1,6 +1,6 @@
 function c = coverages(s)
-% Get the surface coverages of the species in the phase ``s``
-%
+% COVERAGES  Get the surface coverages of the species on an interface.
+% c = coverages(s)
 % :param s:
 %     Instance of class :mat:func:`Interface` with surface species
 % :return:

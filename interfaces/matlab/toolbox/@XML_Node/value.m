@@ -1,4 +1,6 @@
 function v = value(x,loc)
+% VALUE  Get the value at a location in an XML_Node
+% v = value(x,loc)
 % value(x) returns the value of the XML element.
 % value(x, loc) is shorthand for value(child(x,loc))
 %

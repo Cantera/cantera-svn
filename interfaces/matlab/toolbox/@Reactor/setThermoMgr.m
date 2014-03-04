@@ -1,5 +1,6 @@
 function setThermoMgr(r, t)
-% Set the thermo manager for an instance of :mat:func:`Reactor`.
+% SETTHERMOMGR  Set the thermodynamics manager.
+% setThermoMgr(r, t)
 % This method is used internally during Reactor initialization, but
 % is usually not called by users.
 %

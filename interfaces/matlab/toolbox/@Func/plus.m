@@ -1,6 +1,6 @@
 function r = plus(a, b)
-% Return a functor representing the sum of two input functors
-%
+% PLUS  Get a functor representing the sum of two input functors.
+% r = plus(a, b)
 % :param a:
 %     Instance of class :mat:func:`Func`
 % :param b:

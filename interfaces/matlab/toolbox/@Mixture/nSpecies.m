@@ -1,4 +1,6 @@
 function n = nSpecies(self)
+% NSPECIES  Get the number of species in a mixture.
+% n = nSpecies(self)
 % :param self:
 %     Instance of class :mat:func:`Mixture`
 % :return:

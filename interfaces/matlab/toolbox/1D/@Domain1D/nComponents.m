@@ -1,4 +1,6 @@
 function n = nComponents(d)
+% NCOMPONENTS  Get the number of components.
+% n = nComponents(d)
 % :param d:
 %     Instance of class :mat:func:`Domain1D`
 % :return:

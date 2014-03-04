@@ -1,6 +1,6 @@
-function r = rdivide(a,b)
-% Returns a functor that is the ratio of the input functors
-%
+function r = rdivide(a, b)
+% RDIVIDE  Get a functor that is the ratio of the input functors.
+% r = rdivide(a,b)
 % :param a:
 %     Instance of class :mat:func:`Func`
 % :param b:

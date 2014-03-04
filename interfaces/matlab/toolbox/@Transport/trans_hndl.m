@@ -1,12 +1,12 @@
 function n = trans_hndl(a)
-% Integer used to access kernel object
-%
+% TRANS_HNDL  Get the integer used to access the kernel object.
+% n = trans_hndl(a)
 % :param a:
 %     Instance of class :mat:func:`Transport` (or another
-%     object containing an instance of that class)
+%     object derived from Transport)
 %     for which the handle is desired.
 % :return:
-%     Returns the integer ID of the transport kernel object.
+%     Integer used to access the kernel object
 %
 
 n = a.id;

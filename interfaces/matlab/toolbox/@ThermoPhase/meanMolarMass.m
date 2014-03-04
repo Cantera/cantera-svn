@@ -1,4 +1,6 @@
 function wtm = meanMolarMass(tp)
+% MEANMOLARMASS  Get the mean molar mass.
+% wtm = meanMolarMass(tp)
 % The mean molar mass is the mole-fraction-weighted sum of the
 % molar masses of the individual species in the phase.
 %

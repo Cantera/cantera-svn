@@ -1,4 +1,6 @@
 function m = SymmPlane(id)
+% SYMMPLANE  Create a symmetry plane domain.
+% m = SymmPlane(id)
 % :param id:
 %     String ID of the symmetry plane.
 % :return:

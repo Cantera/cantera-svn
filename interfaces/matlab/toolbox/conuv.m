@@ -1,7 +1,7 @@
-function dydt = conuv(t,y,gas,mw) %#ok<INUSL>
-% ODE system for a constant-volume, adiabatic reactor.
-%
-% Function :mat:func:`conuv` evaluates the system of ordinary 
+function dydt = conuv(t, y, gas, mw)
+% CONUV  Set up the ODE system for a constant-volume, adiabatic reactor.
+% dydt = conuv(t, y, gas, mw)
+% Function :mat:func:`conuv` evaluates the system of ordinary
 % differential equations for an adiabatic, constant-volume,
 % zero-dimensional reactor. It assumes that the 'gas' object
 % represents a reacting ideal gas mixture.

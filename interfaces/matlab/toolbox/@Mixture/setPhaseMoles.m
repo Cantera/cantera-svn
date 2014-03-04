@@ -1,7 +1,6 @@
 function setPhaseMoles(self, n, moles)
-% Set the number of moles of phase number ``n`` to
-% ``moles`` (kmol).
-%
+% SETPHASEMOLES  Set the number of moles of a phase in a mixture.
+% setPhaseMoles(self, n, moles)
 % :param self:
 %     Instance of class :mat:func:`Mixture`
 % :param n:

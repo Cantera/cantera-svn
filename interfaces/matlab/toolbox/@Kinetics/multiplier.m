@@ -1,6 +1,6 @@
 function n = multiplier(a,irxn)
-% Get the multiplier for reaction rate of progress.
-%
+% MULTIPLIER  Get the multiplier for reaction rate of progress.
+% n = multiplier(a,irxn)
 % The multiplier multiplies the reaction rate of progress. It may
 % be used to implement sensitivity analysis, or to selectively
 % disable reactions.  For reversible reactions, it multiplies both
@@ -10,7 +10,7 @@ function n = multiplier(a,irxn)
 %
 % :param a:
 %     Instance of class :mat:func:`Kinetics` (or another
-%     object containing an instance of that class)
+%     object deriving from Kinetics)
 %     for which the multipliers are desired.
 % :param irxn:
 %     Integer reaction number for which the multiplier is desired.

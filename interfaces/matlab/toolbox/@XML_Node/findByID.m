@@ -1,6 +1,6 @@
 function x = findByID(root, id)
-% Find an XML element by ID
-%
+% FINDBYID  Get an XML element given its ID.
+% x = findByID(root, id)
 % :param root:
 %     Instance of class :mat:func:`XML_Node`
 % :param id:

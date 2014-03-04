@@ -1,5 +1,6 @@
 function h = enthalpy_mass(r)
-% The specific enthalpy of the reactor in J/kg.
+% ENTHALPY_MASS  The specific enthalpy of the reactor.
+% h = enthalpy_mass(r)
 %
 % See also: :mat:func:`intEnergy_mass`
 %
@@ -8,7 +9,7 @@ function h = enthalpy_mass(r)
 % :return:
 %     The specific enthalpy of the reactor contents at the
 %     end of the last call to :mat:func:`advance` or :mat:func:`step`.
-%     The enthalpy is retrieved from the solution vector.
+%     The enthalpy is retrieved from the solution vector. Units: J/kg
 %
 
 h = reactormethods(27, reactor_hndl(r));

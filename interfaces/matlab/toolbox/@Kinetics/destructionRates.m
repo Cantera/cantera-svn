@@ -1,16 +1,17 @@
 function ddot = destructionRates(a)
-% Chemical destruction rates (kmol/m^3/s).
+% DESTRUCTIONRATES  Get the chemical destruction rates.
+% ddot = destructionRates(a)
 %
 % See also: :mat:func:`creationRates`, :mat:func:`netProdRates`
 %
 % :param a:
 %     Instance of class :mat:func:`Kinetics` (or another
-%     object containing an instance of that class)
+%     object deriving from Kinetics)
 %     for which destruction rates are desired.
 % :return:
 %     Returns a column vector of the destruction rates of all
 %     species. If the output is not assigned to a variable, a
-%     bar graph is produced.
+%     bar graph is produced. Units: kmol/m**3-s
 %
 
 ddot = kinetics_get(a.id,22,0);
