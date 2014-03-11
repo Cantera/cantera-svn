@@ -1,8 +1,16 @@
 function setKineticsMgr(r, k)
-% SETKINETICSMGR - set the kinetics manager. This method is used
-% internally during Reactor initialization, but is usually not
-% called by users.
+% SETKINETICSMGR  Set the kinetics manager.
+% setKineticsMgr(r, k)
+% This method is used internally during Reactor initialization, but
+% is usually not called by users.
 %
+% :param r:
+%     Instance of class :mat:func:`Reactor`
+% :param k:
+%     Instance of class :mat:func:`Kinetics`, or another object
+%     containing an instance of that class.
+%
+
 if ~isa(k,'Kinetics')
     error('wrong object type');
 end

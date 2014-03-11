@@ -1,5 +1,14 @@
-function b = subsref(a,s)
-% SUBSREF
+function b = subsref(a, s)
+% SUBSREF  Redefine subscripted references for functors.
+% b = subsref(a, s)
+% :param a:
+%     Instance of class :mat:func:`Func`
+% :param s:
+%     Value at which the function should be evaluated.
+% :return:
+%     Returns the value of the function evaluated at ``s``
+%
+
 switch s.type
     case '()'
         ind = s.subs{:};
