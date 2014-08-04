@@ -77,7 +77,6 @@ cdef class Mixture:
         """Index of element with name 'element'::
 
             >>> mix.element_index('H')
-            2
         """
         if isinstance(element, (str, unicode)):
             index = self.mix.elementIndex(stringify(element))
