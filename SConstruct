@@ -62,9 +62,16 @@ if 'clean' in COMMAND_LINE_TARGETS:
         if name.endswith('.msi'):
             removeFile(name)
     removeFile('interfaces/matlab/toolbox/cantera_shared.dll')
-    for name in os.listdir('interfaces/matlab/toolbox'):
-        if name.startswith('ctmethods.'):
-            removeFile('interfaces/matlab/toolbox/' + name)
+    for name in os.listdir('interfaces/matlab'):
+        if name == 'Contents.m':
+            removeFile('interfaces/matlab/' + name)
+        elif name == 'ctpath.m':
+            removeFile('interfaces/matlab/' + name)
+        elif name == 'toolbox':
+            for fname in os.listdir('interfaces/matlab/' + name):
+                if fname.startswith('ctmethods.'):
+                    removeFile('interfaces/matlab/toolbox/' + fname)
+
     print 'Done removing output files.'
 
     if COMMAND_LINE_TARGETS == ['clean']:
