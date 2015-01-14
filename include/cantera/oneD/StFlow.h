@@ -193,6 +193,37 @@ public:
         }
     }
 
+	/*!Turn radiation on / off
+    The used simple radiation model was established by Y. Liu and B. Rogg [Y. Liu and B. Rogg,
+    Modelling of thermally radiating diffusion flames with detailed chemistry and transport,
+    EUROTHERM Seminars, 17:114–127, 1991]. This model considers the radiation of CO2 and H2O.
+    */
+	void enableRadiation(bool doRadiation) {
+		if (doRadiation) {
+			do_radiation = true;
+		} else {
+			do_radiation = false;
+		}
+	}
+
+	/*! Set the emissivities for the boundary values
+	* 	Reads the emissivities for the left and right boundary
+	* 	values in the radiative term and writes them into the
+	* 	variables, which are used for the calculation.
+	*/
+	void setBoundaryEmissivities(doublereal e_left, doublereal e_right) {
+		if (e_left < 0 || e_left > 1) {
+			throw CanteraError("setBoundaryEmissivities",
+            "The left boundary emissivity must be between 0.0 and 1.0!");
+		} else if (e_right < 0 || e_right > 1) {
+            throw CanteraError("setBoundaryEmissivities",
+            "The right boundary emissivity must be between 0.0 and 1.0!");
+		} else {
+			epsilon_left = e_left;
+			epsilon_right = e_right;
+		}
+	}
+
     void fixTemperature(size_t j=npos) {
         bool changed = false;
         if (j == npos)
@@ -481,11 +512,22 @@ protected:
 
     bool m_ok;
 
+	// boundary emissivities for the radiation calculations
+	doublereal epsilon_left;
+	doublereal epsilon_right;
+
     // flags
     std::vector<bool> m_do_energy;
     bool m_do_soret;
     std::vector<bool> m_do_species;
     int m_transport_option;
+
+	// flag for the radiative heat loss
+	bool do_radiation;
+
+	// radiative heat loss vector
+	// vector which contains the values of the radiative heat loss
+	std::vector<doublereal> m_qdotRadiation;
 
     // solution estimate
     //vector_fp m_zest;

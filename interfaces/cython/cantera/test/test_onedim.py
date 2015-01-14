@@ -364,7 +364,7 @@ class TestFreeFlame(utilities.CanteraTest):
 
 
 class TestDiffusionFlame(utilities.CanteraTest):
-    referenceFile = '../data/DiffusionFlameTest-h2-mix.csv'
+    referenceFile = 'default'
     # Note: to re-create the reference file:
     # (1) set PYTHONPATH to build/python2 or build/python3.
     # (2) Start Python in the test/work directory and run:
@@ -387,6 +387,8 @@ class TestDiffusionFlame(utilities.CanteraTest):
         self.sim = ct.CounterflowDiffusionFlame(self.gas, initial_grid)
         self.sim.flame.set_steady_tolerances(default=tol_ss)
         self.sim.flame.set_transient_tolerances(default=tol_ts)
+        self.sim.flame.radiation_enabled(0)
+        self.sim.flame.set_boundary_emissivities(0,0)
 
         # Set properties of the fuel and oxidizer mixtures
         self.sim.fuel_inlet.mdot = mdot_fuel
@@ -416,7 +418,8 @@ class TestDiffusionFlame(utilities.CanteraTest):
         self.assertTrue(self.sim.energy_enabled)
         self.assertEqual(self.sim.transport_model, 'Mix')
 
-    def test_mixture_averaged(self, saveReference=False):
+    def test_mixture_averaged(self, saveReference=False): 
+        self.referenceFile = '../data/DiffusionFlameTest-h2-mix.csv'
         self.create_sim(p=ct.one_atm)
 
         nPoints = len(self.sim.grid)
@@ -439,6 +442,34 @@ class TestDiffusionFlame(utilities.CanteraTest):
             bad = utilities.compareProfiles(self.referenceFile, data,
                                             rtol=1e-2, atol=1e-8, xtol=1e-2)
             self.assertFalse(bad, bad)
+            
+    def test_mixture_averaged_rad(self, saveReference=False):
+        self.referenceFile = '../data/DiffusionFlameTest-h2-mix-rad.csv'
+        self.create_sim(p=ct.one_atm)
+
+        nPoints = len(self.sim.grid)
+        Tfixed = self.sim.T
+        self.solve_fixed_T()
+        self.assertEqual(nPoints, len(self.sim.grid))
+        self.assertArrayNear(Tfixed, self.sim.T)
+        self.sim.flame.radiation_enabled(1)
+        self.sim.flame.set_boundary_emissivities(0.25,0.15)
+        
+        self.solve_mix()
+        data = np.empty((self.sim.flame.n_points, self.gas.n_species + 4))
+        data[:,0] = self.sim.grid
+        data[:,1] = self.sim.u
+        data[:,2] = self.sim.V
+        data[:,3] = self.sim.T
+        data[:,4:] = self.sim.Y.T
+
+        if saveReference:
+            np.savetxt(self.referenceFile, data, '%11.6e', ', ')
+        else:
+            bad = utilities.compareProfiles(self.referenceFile, data,
+                                            rtol=1e-2, atol=1e-8, xtol=1e-2)
+            self.assertFalse(bad, bad)
+
 
     def test_strain_rate(self):
         # This doesn't test that the values are correct, just that they can be
@@ -502,6 +533,8 @@ class TestCounterflowPremixedFlame(utilities.CanteraTest):
 
         sim.set_refine_criteria(ratio=3, slope=0.2, curve=0.4, prune=0.02)
         sim.energy_enabled = True
+        sim.flame.radiation_enabled(0)
+        sim.flame.set_boundary_emissivities(0,0)
         sim.solve(loglevel=0, refine_grid=True)
 
         data = np.empty((sim.flame.n_points, gas.n_species + 4))
