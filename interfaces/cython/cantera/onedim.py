@@ -158,6 +158,13 @@ class FlameBase(Sim1D):
         """
         return self.profile(self.flame, 'lambda')
 
+    def elemental_mass_fraction(self, m):
+        vals = np.empty(self.flame.n_points)
+        for i in range(self.flame.n_points):
+            self.set_gas_state(i)
+            vals[...,i] = self.gas.elemental_mass_fraction(m)
+        return vals
+
     def solution(self, component, point=None):
         """
         Get the solution at one point or for the full flame domain (if
@@ -289,6 +296,12 @@ for attr in ['forward_rates_of_progress', 'reverse_rates_of_progress', 'net_rate
              'delta_standard_enthalpy', 'delta_standard_gibbs',
              'delta_standard_entropy']:
     setattr(FlameBase, attr, _array_property(attr, 'n_reactions'))
+
+# Add docstrings for scalar functions
+for attr in ['elemental_mass_fraction']:
+    getattr(FlameBase, attr).__func__.__doc__ = \
+        _trim(getattr(Solution, attr).__doc__) \
+        + '\n\nReturns an array of length `n_points`.'
 
 
 class FreeFlame(FlameBase):

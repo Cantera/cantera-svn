@@ -55,6 +55,7 @@ THERMO_1D(getMoleFractions)
 THERMO_1D(setMoleFractions)
 THERMO_1D(getConcentrations)
 THERMO_1D(setConcentrations)
+THERMO_1D(getElementalMassFractions)
 
 THERMO_1D(getMolecularWeights)
 THERMO_1D(getChemPotentials)

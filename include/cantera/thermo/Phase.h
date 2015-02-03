@@ -526,6 +526,40 @@ public:
     //!                     is the number of species in the phase.
     virtual void setConcentrations(const doublereal* const conc);
 
+    //! Get the elemental mass fractions
+    //!
+    //! The elemental mass fraction \f$Z(m)\f$ is defined by
+    //! \f[
+    //!     Z(m) = \sum_i \frac{a_{m,i} M_m}{M_i} Y_i
+    //! \f]
+    //! with \f$a_{m,i}\f$ being the number of atoms of element \f$m\f$ in
+    //! species \f$i`, \f$M_m\f$ the atomic weight of element \f$m`,
+    //! \f$M_i\f$ the molecular weight of species \f$i`, and \f$Y_i`
+    //! the mass fraction of species \f$i`.
+    //!
+    //!     @param[out] emf The vector of elemental mass fractions.
+    //!                     The length of the vector must be greater than or
+    //!                     equal to the number of elements within the phase.
+    void getElementalMassFractions(doublereal* const emf) const;
+
+    //! Elemental mass fraction of element m
+    //!
+    //! The elemental mass fraction \f$Z(m)\f$ is defined by
+    //! \f[
+    //!     Z(m) = \sum_i \frac{a_{m,i} M_m}{M_i} Y_i
+    //! \f]
+    //! with \f$a_{m,i}\f$ being the number of atoms of element \f$m\f$ in
+    //! species \f$i`, \f$M_m\f$ the atomic weight of element \f$m`,
+    //! \f$M_i\f$ the molecular weight of species \f$i`, and \f$Y_i`
+    //! the mass fraction of species \f$i`.
+    //!
+    //!     @param[in] m    Index of the element within the phase. If m is
+    //!                     outside the valid range, an exception will be
+    //!                     thrown.
+    //!
+    //!     @return Returns the elemental mass fraction of element m.
+    doublereal elementalMassFraction(const size_t m) const;
+
     //! Returns a const pointer to the start of the moleFraction/MW array.
     //! This array is the array of mole fractions, each divided by the mean
     //! molecular weight.
