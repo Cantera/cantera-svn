@@ -648,6 +648,28 @@ class CounterflowDiffusionFlame(FlameBase):
         else:
             raise ValueError('Definition "' + definition + '" is not available')
 
+    def mixture_fraction(self, m):
+        r"""
+        Compute the mixture fraction based on element *m*
+    
+        The mixture fraction is computed from the elemental mass fraction of
+        element *m*, normalized by its values on the fuel and oxidizer
+        inlets:
+
+        .. math:: Z = \frac{Z_{m}(z) - Z_{m, oxidizer}}
+                           {Z_{m, fuel} - Z_{m, oxidizer}}
+
+        :param m:
+            The element based on which the mixture fraction is computed,
+            may be specified by name or by index
+    
+        >>> f.mixture_fraction('H')
+        """
+        return (self.elemental_mass_fraction(m) \
+            - self.elemental_mass_fraction(m)[-1]) \
+            / (self.elemental_mass_fraction(m)[0] \
+            - self.elemental_mass_fraction(m)[-1])
+
 
 class ImpingingJet(FlameBase):
     """An axisymmetric flow impinging on a surface at normal incidence."""
