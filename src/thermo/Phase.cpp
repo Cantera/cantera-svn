@@ -648,7 +648,7 @@ doublereal Phase::elementalMassFraction(const size_t m) const
     doublereal Z = 0.0;
     for (size_t k = 0; k != m_kk; ++k) {
         Z += nAtoms(k, m) * atomicWeight(m) / molecularWeight(k)
-            * moleFraction(k);
+            * massFraction(k);
     }
     return Z;
 }
@@ -659,7 +659,7 @@ void Phase::getElementalMassFractions(doublereal* const emf) const
         emf[m] = 0;
         for (size_t k = 0; k != m_kk; ++k) {
             emf[m] += nAtoms(k, m) * atomicWeight(m) / molecularWeight(k)
-                      * moleFraction(k);
+                      * massFraction(k);
         }
     }
 }
