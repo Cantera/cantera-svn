@@ -330,10 +330,10 @@ cdef class ThermoPhase(_SolutionBase):
 
     def elemental_mass_fraction(self, m):
         """
-        Get the elemental mass fraction :math:`Z(m)` of element :math:`m` as
+        Get the elemental mass fraction :math:`Z_m(m)` of element :math:`m` as
         defined by:
 
-        .. math:: Z(m) = \sum_i \\frac{a_{m,i} M_m}{M_i} Y_i
+        .. math:: Z_m(m) = \sum_i \\frac{a_{m,i} M_m}{M_i} Y_i
         
         with :math:`a_{m,i}` being the number of atoms of element :math:`m` in
         species :math:`i`, :math:`M_m` the atomic weight of element :math:`m`,
@@ -347,6 +347,25 @@ cdef class ThermoPhase(_SolutionBase):
         1.0
         """
         return self.thermo.elementalMassFraction(self.element_index(m))
+
+    def elemental_mole_fraction(self, m):
+        """
+        Get the elemental mole fraction :math:`Z_n(m)` of element :math:`m` as
+        defined by:
+
+        .. math:: Z_n(m) = \sum_i a_{m,i} Y_i
+        
+        with :math:`a_{m,i}` being the number of atoms of element :math:`m` in
+        species :math:`i` and :math:`Y_i` the mole fraction of species
+        :math:`i`.
+
+        :param m:
+            Base element, may be specified by name or by index.
+        
+        >>> phase.elemental_mole_fraction('H')
+        1.0
+        """
+        return self.thermo.elementalMoleFraction(self.element_index(m))
 
     def set_unnormalized_mass_fractions(self, Y):
         """

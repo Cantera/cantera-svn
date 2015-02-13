@@ -101,7 +101,7 @@ cdef extern from "cantera/thermo/ThermoPhase.h" namespace "Cantera":
 
         double concentration(size_t) except +
         double elementalMassFraction(size_t) except +
-        double getElementalMassFractions(size_t) except +
+        double elementalMoleFraction(size_t) except +
 
         # state setters
         void setState_TR(double, double) except +
