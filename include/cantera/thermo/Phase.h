@@ -548,7 +548,7 @@ public:
     //!
     //! The elemental mole fraction \f$Z_n(m)\f$ is defined by
     //! \f[
-    //!     Z_n(m) = \sum_i a_{m,i} X_i
+    //!     Z_n(m) = \sum_i \frac{a_{m,i}}{\sum_k a_{k,i}} X_i
     //! \f]
     //! with \f$a_{m,i}\f$ being the number of atoms of element \f$m\f$ in
     //! species \f$i`and \f$X_i` the mole fraction of species \f$i`.

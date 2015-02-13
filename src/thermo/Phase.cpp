@@ -658,7 +658,11 @@ doublereal Phase::elementalMoleFraction(const size_t m) const
     checkElementIndex(m);
     doublereal Z_n = 0.0;
     for (size_t k = 0; k != m_kk; ++k) {
-        Z_n += nAtoms(k, m) * moleFraction(k);
+        int nTotalAtoms = 0;
+        for (size_t l = 0; l != m_mm; ++l) {
+            nTotalAtoms += nAtoms(k, l);
+        }
+        Z_n += nAtoms(k, m) / nTotalAtoms * moleFraction(k);
     }
     return Z_n;
 }

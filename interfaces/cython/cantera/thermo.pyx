@@ -353,10 +353,10 @@ cdef class ThermoPhase(_SolutionBase):
         Get the elemental mole fraction :math:`Z_n(m)` of element :math:`m` as
         defined by:
 
-        .. math:: Z_n(m) = \sum_i a_{m,i} Y_i
+        .. math:: Z_n(m) = \sum_i \\frac{a_{m,i}}{\sum_k a_{k,i}} X_i
         
         with :math:`a_{m,i}` being the number of atoms of element :math:`m` in
-        species :math:`i` and :math:`Y_i` the mole fraction of species
+        species :math:`i` and :math:`X_i` the mole fraction of species
         :math:`i`.
 
         :param m:
