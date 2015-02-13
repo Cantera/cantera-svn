@@ -180,25 +180,25 @@ class FlameBase(Sim1D):
              for k in range(k0, k0 + self.gas.n_species)]
         self.gas.TPY = self.value(self.flame, 'T', point), self.P, Y
 
-    def heat_of_reaction(self, reaction=None, point=None):
+    @property
+    def heat_release_rate(self):
         """
-        Get the volumetric heat of reaction [W/m^3] at one point or for the
-        full flame domain (if `point=None`) for the specified *reaction*. If
-        *reaction* is *None*, the total volumetric heat of reaction is
-        returned.
+        Get the total volumetric heat release rate [W/m^3].
         """
-        if reaction is None:
-            # sum over species instead of reactions to avoid round-off errors
-            heat_of_reaction = \
-                np.sum(self.standard_enthalpies_RT * self.net_production_rates,
-                       0) * gas_constant * self.T
-        else:
-            heat_of_reaction = self.net_rates_of_progress[reaction] \
-                * self.delta_standard_enthalpy[reaction]
-        if point is None:
-            return heat_of_reaction
-        else:
-            return heat_of_reaction[point]
+        return - np.sum(self.partial_molar_enthalpies
+                        * self.net_production_rates, 0)
+
+    @property
+    def heat_production_rates(self):
+        """
+        Get the volumetric heat production rates [W/m^3] on a per-reaction
+        basis. The sum over all reactions results in the total volumetric heat
+        release rate.        
+        Example: C. K. Law: Combustion Physics (2006), Fig. 7.8.6
+        
+        >>> f.heat_production_rates[2]  # heat production rate of the 2nd reaction
+        """
+        return - self.net_rates_of_progress * self.delta_standard_enthalpy
 
     def write_csv(self, filename, species='X', quiet=True):
         """
