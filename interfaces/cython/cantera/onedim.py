@@ -158,6 +158,20 @@ class FlameBase(Sim1D):
         """
         return self.profile(self.flame, 'lambda')
 
+    def elemental_mass_fraction(self, m):
+        vals = np.empty(self.flame.n_points)
+        for i in range(self.flame.n_points):
+            self.set_gas_state(i)
+            vals[...,i] = self.gas.elemental_mass_fraction(m)
+        return vals
+
+    def elemental_mole_fraction(self, m):
+        vals = np.empty(self.flame.n_points)
+        for i in range(self.flame.n_points):
+            self.set_gas_state(i)
+            vals[...,i] = self.gas.elemental_mole_fraction(m)
+        return vals
+
     def solution(self, component, point=None):
         """
         Get the solution at one point or for the full flame domain (if
@@ -309,6 +323,12 @@ for attr in ['forward_rates_of_progress', 'reverse_rates_of_progress', 'net_rate
              'delta_standard_enthalpy', 'delta_standard_gibbs',
              'delta_standard_entropy']:
     setattr(FlameBase, attr, _array_property(attr, 'n_reactions'))
+
+# Add docstrings for scalar functions
+for attr in ['elemental_mass_fraction', 'elemental_mole_fraction']:
+    getattr(FlameBase, attr).__func__.__doc__ = \
+        _trim(getattr(Solution, attr).__doc__) \
+        + '\n\nReturns an array of length `n_points`.'
 
 
 class FreeFlame(FlameBase):
@@ -654,6 +674,28 @@ class CounterflowDiffusionFlame(FlameBase):
 
         else:
             raise ValueError('Definition "' + definition + '" is not available')
+
+    def mixture_fraction(self, m):
+        r"""
+        Compute the mixture fraction based on element *m*
+    
+        The mixture fraction is computed from the elemental mass fraction of
+        element *m*, normalized by its values on the fuel and oxidizer
+        inlets:
+
+        .. math:: Z = \frac{Z_{m}(z) - Z_{m, oxidizer}}
+                           {Z_{m, fuel} - Z_{m, oxidizer}}
+
+        :param m:
+            The element based on which the mixture fraction is computed,
+            may be specified by name or by index
+    
+        >>> f.mixture_fraction('H')
+        """
+        return (self.elemental_mass_fraction(m) \
+            - self.elemental_mass_fraction(m)[-1]) \
+            / (self.elemental_mass_fraction(m)[0] \
+            - self.elemental_mass_fraction(m)[-1])
 
 
 class ImpingingJet(FlameBase):
